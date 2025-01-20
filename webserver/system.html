@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="media/favicon.ico" sizes="any" type="image/x-icon">
+	<link rel="stylesheet" href="system.css">
+	<link rel="stylesheet" href="bootstrap.min.css" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="css/all.min.css" media="all" onload="this.media='all'">
+	<link rel="stylesheet" href="util.css">
+	<link rel="stylesheet" href="side-bar.css">
+	<link rel="stylesheet" href="top-bar.css">
+	<title>SerialETH - System Settings</title>
+</head>
+
+<header>
+	<div id="top-bar"></div>
+	<div id="side-bar"></div>
+</header>
+
+<body> 
+	
+	<div class="div-main">
+	
+		<div class="alert alert-warning hidden" id="div-error" role="alert">
+			<p id="error-system"></p>
+		</div>
+		
+		<div class="alert alert-success hidden" id="div-success" role="alert">
+			<p id="success-system">
+				The data has been stored successfully. </br>
+				The board needs to restart for the configurations to take place. </br>
+				You can click <a href="/restart">HERE</a> to restart now or restart manually later.
+			</p>
+		</div>
+	
+		<div class="page-title">
+			<h5> System Settings </h3>
+		</div>
+	
+		<form method="POST" id="form-post">
+		
+			<div class="card card-system">
+				<div class="card-header">
+					<h4>Authentication</h4>
+				</div>
+				<div class="card-body">
+					<div class="auth-username card-input">
+						<span class="input-span">Username</span>
+						<input class="form-control" type="text" name="username" id="username" placeholder="Username">
+					</div>
+					<div class="auth-pswd card-input">
+						<span class="input-span">Password</span>
+						<input class="form-control" type="password" name="password" id="password" placeholder="Password">
+					</div>
+				</div>
+			</div>
+			
+			<div class="card card-system">
+				<div class="card-header">
+					<h4>LAN Settings</h4>
+				</div>
+				<div class="card-body">
+					<div class="card-input input-checkbox">
+						<p>DHCP:</p>
+						<input type="checkbox" name="dhcp" id="dhcp">
+					</div>
+					<div id="lan-info">
+						<div class="card-input">
+							<span class="input-span">LAN IP</span>
+							<input class="form-control" type="text" name="lanip" id="lanip" placeholder="LAN IP">
+						</div>
+						<div class="card-input">
+							<span class="input-span">Subnet Mask</span>
+							<input class="form-control" type="text" name="netmask" id="netmask" placeholder="Subnet Mask">
+						</div>
+						<div class="card-input">
+							<span class="input-span">Gateway</span>
+							<input class="form-control" type="text" name="gateway" id="gateway" placeholder="Gateway">
+						</div>
+						<div class="card-input">
+							<span class="input-span">DNS</span>
+							<input class="form-control" type="text" name="dns" id="dns" placeholder="DNS">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="card card-system">
+				<div class="card-header">
+					<h4>WiFi Settings</h4>
+				</div>
+				<div class="card-body">
+					<div class="card-input input-checkbox">
+						<span class="input-span">WiFi Mode</span>
+						<select class="form-control" id="options-wifi-mode" name="wifi-mode">
+							<option value="1">AP</option>
+							<option value="2">STA</option>
+							<option value="3" select>AP + STA</option>
+						</select>
+					</div>
+					<div class="card-input">
+						<span class="input-span">AP SSID</span>
+						<input class="form-control" type="text" name="apssid" id="apssid" placeholder="AP SSID">
+					</div>
+					<div class="card-input">
+						<span class="input-span">AP Key</span>
+						<input class="form-control" type="password" name="apkey" id="apkey" placeholder="AP Key">
+					</div>
+					<div class="card-input">
+						<span class="input-span">AP Channel</span>
+						<select class="form-control" id="options-ap-channel" name="ap-channel">
+							<option value="0" select>AUTO</option>
+							<option value="1">CH1</option>
+							<option value="2">CH2</option>
+							<option value="3">CH3</option>
+							<option value="4">CH4</option>
+							<option value="5">CH5</option>
+							<option value="6">CH6</option>
+							<option value="7">CH7</option>
+							<option value="8">CH8</option>
+							<option value="9">CH9</option>
+							<option value="10">CH10</option>
+							<option value="11">CH11</option>
+							<option value="12">CH12</option>
+							<option value="13">CH13</option>
+						</select>
+					</div>
+					<div class="card-input">
+						<span class="input-span">STA SSID</span>
+						<input class="form-control" type="text" name="stassid" id="stassid" placeholder="STA SSID">
+					</div>
+					<div class="card-input">
+						<span class="input-span">STA Key</span>
+						<input class="form-control" type="password" name="stakey" id="stakey" placeholder="STA Key">
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="div-btn-save">
+				<button class="btn btn-primary btn-save" id="btn-save-system" type="submit">Save</button>
+			</div>
+			
+		</form>
+	</div>
+	
+
+</body>
+
+<script>
+
+	function startSideBar() {
+		var btn = document.getElementById("btn-mobile");
+		const sideBar = document.getElementById("side-bar")
+		btn.addEventListener("click", ()=>{
+			sideBar.classList.toggle("hidden");
+		});
+
+		window.addEventListener("resize", ()=>{
+			if (window.innerWidth >= 876) {
+				sideBar.classList.remove("hidden");
+			}
+			else {
+				sideBar.classList.add("hidden");
+			}
+		});
+	}
+
+	async function loadExternal(){
+	
+		const sideBar = await fetch("side-bar.html");
+		const sideBarContent = await sideBar.text();
+		
+		const topBar = await fetch("top-bar.html");
+		const topBarContent = await topBar.text();
+		
+		document.getElementById("side-bar").innerHTML = sideBarContent;
+		document.getElementById("top-bar").innerHTML = topBarContent;
+
+		startSideBar();
+	}
+
+	async function loadData(error) {
+		const response = await fetch(error ? '/get-data-error' : '/get-data-system');
+		const data = await response.json();
+
+		const fieldMap = {
+			username: "username", password: "password", dhcp: "dhcp", lan_ip: "lanip",
+			subnet_mask: "netmask", gateway: "gateway", dns: "dns", wifi_mode: "options-wifi-mode",
+			apssid: "apssid", apkey: "apkey", ap_channel: "options-ap-channel",
+			stassid: "stassid", stakey: "stakey",
+		};
+
+		for (const [key, elementId] of Object.entries(fieldMap)) {
+			const element = document.getElementById(elementId);
+
+			if (element) {
+				if (key === "dhcp") {
+					var dhcp_value = data[key] === "on";
+					element.checked = dhcp_value;
+					const lanInfo = document.getElementById("lan-info");
+					if (dhcp_value == 1) {
+						lanInfo.classList.add("hidden");
+					}
+					else {
+						lanInfo.classList.remove("hidden");
+					}
+				} else {
+					element.value = data[key] || "";
+				}
+			}
+		}
+	}
+	
+	document.addEventListener("DOMContentLoaded", () => {
+
+		const dhcp = document.getElementById("dhcp");
+		const lanInfo = document.getElementById("lan-info");
+
+		let url = new URL(window.location.href);
+		let param = url.searchParams.get("error");
+		let param2 = url.searchParams.get("success");
+		
+		var error = param !== null
+		var success = param2 !== null;
+		
+		var div = document.getElementById("div-error");
+		var text = document.getElementById("error-system");
+		if (error) {
+			div.classList.remove("hidden");
+			if (param == "invalid_auth") {
+				text.innerHTML = "<p>User and password must be 5 characters or higher</p>";
+			}
+			else if (param.indexOf("invalid_space_") !== -1) {
+				var index = param.lastIndexOf("_");
+				var sub = param.substring(index + 1);
+				text.innerHTML = "The field " + sub.toUpperCase() + " contains in-between spaces that are not allowed";
+				var input = document.getElementById(sub);
+				input.style.border = "1px solid #dc3545"
+			}
+			else if (param == "invalid_ap") {
+				text.innerHTML = "<p>The AP data is invalid</br>The SSID must be between 5 and 32 characters</br>" +
+									"The KEY must have atleast 8 characters</p>";
+			}
+			else if (param == "invalid_sta") {
+				text.innerHTML = "<p>The STA data is invalid</br> The SSID must be between 5 and 32 characters</br>" +
+									"The KEY must have atleast 8 characters</p>";
+			}
+			else if (param.indexOf("invalid_ip_") !== -1) {
+				var index = param.lastIndexOf("_");
+				var sub = param.substring(index + 1);
+				text.innerHTML = "<p>The field " + sub.toUpperCase() + " contains an invalid IP</p>";
+				var input = document.getElementById(sub);
+				input.style.border = "1px solid #dc3545"
+			}
+		}
+		else {
+			div.classList.add("hidden");
+		}
+		
+		loadExternal();
+		loadData(error);	
+		
+		var div = document.getElementById("div-success");
+		if (success) {
+			if (param2 == "true") {
+				div.classList.remove("hidden");
+			}
+		}
+		else {
+			div.classList.add("hidden");
+		}
+
+		dhcp.addEventListener("change", ()=>{
+			if (dhcp.checked) {
+				lanInfo.classList.add("hidden");
+			}
+			else {
+				lanInfo.classList.remove("hidden");
+			}
+		});
+	});
+
+
+</script>
+
+</html>

@@ -1,0 +1,48 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.card-system {
+	margin-bottom: 16px;
+}
+
+.div-main-system .card-system:last-child {
+	margin-bottom: 0;
+}
+
+.input-checkbox {
+	margin-bottom: 12px;
+}
+
+.input-checkbox p {
+	margin-right: 10px !important;
+	color: #595c5f;
+	font-weight: 600;
+}
+
+.input-checkbox p, input {
+	display: inline-block;
+	margin: 0;
+}
+
+/* < 876px */
+@media(max-width: 876px){
+	
+	.div-main {
+		position: relative;
+		margin: 0 !important;
+		top: 50px !important;
+		padding: 5vw 5vh 5vw 5vh !important;
+	}
+
+	.btn-save {
+		min-width: 25vw;
+	}
+	
+}

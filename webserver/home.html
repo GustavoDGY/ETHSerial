@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="media/favicon.ico" sizes="any" type="image/x-icon">
+	<link rel="stylesheet" href="bootstrap.min.css" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="home.css">
+	<link rel="stylesheet" href="util.css">
+	<title>SerialETH</title>
+</head>
+
+<body>
+	
+	<div class="form-div">
+		<div class="form-aux">
+		
+			<div class="alert alert-warning hidden" id="div-error" role="alert">
+				<p class="text-error" id="text-error"></p>
+			</div>
+		
+			<div class="title-home">
+				<img class="img-logo" src="media/favicon.ico" alt="logo">
+				<h2>SerialETH</h2>
+			</div>
+		
+			<form class="form-home" action="/home" method="post">
+				<div class="card card-home">
+					<div class="card-body">
+						<div class="card-input">
+							<span class="input-span">Username</span>
+							<input class="form-control" type="text" name="user" placeholder="User">
+						</div>
+						<div class="card-input">
+							<span class="input-span">Password</span>
+							<input class="form-control" type="password" name="password" placeholder="Password">
+						</div>
+						<div class="card-input div-btn-save">
+							<button class="btn btn-primary btn-login" type="submit">Login</button>
+						</div>
+					</div>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+	
+</body>
+
+<script>
+	let url = new URL(window.location.href);
+	let param = url.searchParams.get("error");
+	
+	var text = document.getElementById("text-error");
+	var div = document.getElementById("div-error");
+	if (param == "not_authorized") {
+		text.textContent = "User or password are incorrect";
+		div.classList.remove("hidden");
+	}
+	else {
+		div.classList.add("hidden");
+	}
+	
+</script>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="media/favicon.ico" sizes="any" type="image/x-icon">
+	<link rel="stylesheet" href="serial.css">
+	<link rel="stylesheet" href="bootstrap.min.css" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="css/all.min.css" media="all" onload="this.media='all'">
+	<link rel="stylesheet" href="util.css">
+	<link rel="stylesheet" href="side-bar.css">
+	<link rel="stylesheet" href="top-bar.css">
+	<title>SerialETH - Serial Port Settings</title>
+</head>
+
+<header>
+	<div id="top-bar"></div>
+	<div id="side-bar"></div>
+</header>
+
+<body> 
+	
+	<div class="div-main">
+	
+		<div class="alert alert-warning hidden" id="div-error" role="alert">
+			<p id="error-serial"></p>
+		</div>
+		
+		<div class="alert alert-success hidden" id="div-success" role="alert">
+			<p id="success-serial">
+				The data has been stored successfully. </br>
+				The board needs to restart for the configurations to take place. </br>
+				You can click <a href="/restart">HERE</a> to restart now or restart manually later.
+			</p>
+		</div>
+	
+		<div class="page-title">
+			<h5> Serial Port Settings </h3>
+		</div>
+	
+		<form method="POST" id="form-post">
+		
+			<nav>
+				<div class="nav nav-tabs" id="nav-tab" role="tablist">
+					<button class="nav-link active" id="serial1-tab" data-bs-toggle="tab" data-bs-target="#nav-serial1" type="button" role="tab" aria-controls="nav-serial1" aria-selected="true">Serial 1</button>
+					<button class="nav-link" id="serial2-tab" data-bs-toggle="tab" data-bs-target="#nav-serial2" type="button" role="tab" aria-controls="nav-serial2" aria-selected="false">Serial 2</button>
+				</div>
+			</nav>
+			<div class="tab-content tab-content-serial" id="nav-tabContent">
+				<div class="tab-pane fade show active" id="nav-serial1" role="tabpanel" aria-labelledby="serial1-tab">
+					<!-- SERIAL 1 -->
+					<div class="card card-serial">
+						<div class="card-header">
+							<h4>Basic Settings</h4>
+						</div>
+						<div class="card-body">
+							<div class="card-input">
+								<span class="input-span">Baud Rate</span>
+								<select class="form-control" id="options-serial1-baudrate" name="serial1-baudrate">
+									<option value="1200">1200</option>
+									<option value="2400">2400</option>
+									<option value="4800">4800</option>
+									<option value="9600">9600</option>
+									<option value="19200">19200</option>
+									<option value="38400">38400</option>
+									<option value="57600">57600</option>
+									<option value="115200" selected>115200</option>
+									<option value="250000">250000</option>
+									<option value="921600">921600</option>
+								</select>
+							</div>
+							<div class="card-input">
+								<span class="input-span">Data Bit</span>
+								<select class="form-control" id="options-serial1-databit" name="serial1-databit">
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8" selected>8</option>
+								</select>
+							</div>
+							<div class="card-input">
+								<span class="input-span">Stop Bit</span>
+								<select class="form-control" id="options-serial1-stopbit" name="serial1-stopbit">
+									<option value="1" selected>1</option>
+									<option value="2">2</option>
+								</select>
+							</div>
+							<div class="card-input">
+								<span class="input-span">Parity</span>
+								<select class="form-control" id="options-serial1-parity" name="serial1-parity">
+									<option value="1" selected>None</option>
+									<option value="2">Even</option>
+									<option value="3">Odd</option>
+								</select>
+							</div>
+							<div class="card-input">
+								<span class="input-span">Port</span>
+								<input class="form-control" id="port1" name="serial1-port" placeholder="Port">
+							</div>
+						</div>
+					</div>
+					<!-- SERIAL 1 -->
+				</div>
+				
+				<div class="tab-pane fade" id="nav-serial2" role="tabpanel" aria-labelledby="serial2-tab">
+					<!-- SERIAL 2 -->
+					<div class="card card-serial">
+						<div class="card-header">
+							<h4>Basic Settings</h4>
+						</div>
+						<div class="card-body">
+							<div class="card-input">
+								<span class="input-span">Baud Rate</span>
+								<select class="form-control" id="options-serial2-baudrate" name="serial2-baudrate">
+									<option value="1200">1200</option>
+									<option value="2400">2400</option>
+									<option value="4800">4800</option>
+									<option value="9600">9600</option>
+									<option value="19200">19200</option>
+									<option value="38400">38400</option>
+									<option value="57600">57600</option>
+									<option value="115200" selected>115200</option>
+									<option value="250000">250000</option>
+									<option value="921600">921600</option>
+								</select>
+							</div>
+							<div class="card-input">
+								<span class="input-span">Data Bit</span>
+								<select class="form-control" id="options-serial2-databit" name="serial2-databit">
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8" selected>8</option>
+								</select>
+							</div>
+							<div class="card-input">
+								<span class="input-span">Stop Bit</span>
+								<select class="form-control" id="options-serial2-stopbit" name="serial2-stopbit">
+									<option value="1" selected>1</option>
+									<option value="2">2</option>
+								</select>
+							</div>
+							<div class="card-input">
+								<span class="input-span">Parity</span>
+								<select class="form-control" id="options-serial2-parity" name="serial2-parity">
+									<option value="1" selected>None</option>
+									<option value="2">Even</option>
+									<option value="3">Odd</option>
+								</select>
+							</div>
+							<div class="card-input">
+								<span class="input-span">Port</span>
+								<input class="form-control" id="port2" name="serial2-port" placeholder="Port">
+							</div>
+						</div>
+					</div>
+					<!-- SERIAL 2 -->
+				</div>
+			</div>
+		
+			
+			
+			<div class="div-btn-save">
+				<button class="btn btn-primary btn-save" id="btn-save-serial" type="submit">Save</button>
+			</div>
+			
+		</form>
+	</div>
+	
+	<script src="bootstrap.min.js" defer></script>
+	
+</body>
+
+<script>
+
+	function startSideBar() {
+		var btn = document.getElementById("btn-mobile");
+		const sideBar = document.getElementById("side-bar")
+		btn.addEventListener("click", ()=>{
+			sideBar.classList.toggle("hidden");
+		});
+
+		window.addEventListener("resize", ()=>{
+			if (window.innerWidth >= 876) {
+				sideBar.classList.remove("hidden");
+			}
+			else {
+				sideBar.classList.add("hidden");
+			}
+		});
+	}
+
+	async function loadExternal(){
+	
+		const sideBar = await fetch("side-bar.html");
+		const sideBarContent = await sideBar.text();
+		
+		const topBar = await fetch("top-bar.html");
+		const topBarContent = await topBar.text();
+		
+		document.getElementById("side-bar").innerHTML = sideBarContent;
+		document.getElementById("top-bar").innerHTML = topBarContent;
+
+		startSideBar();
+	}
+	
+	async function loadData(error) {
+		
+		const response = await fetch(error ? '/get-data-error' : '/get-data-serial');
+		const data = await response.json();
+		
+		document.getElementById("options-serial1-baudrate").value = data.baudrate1;
+		document.getElementById("options-serial1-databit").value = data.databit1;
+		document.getElementById("options-serial1-stopbit").value = data.stopbit1;
+		document.getElementById("options-serial1-parity").value = data.parity1;
+		document.getElementById("options-serial2-baudrate").value = data.baudrate2;
+		document.getElementById("options-serial2-databit").value = data.databit2;
+		document.getElementById("options-serial2-stopbit").value = data.stopbit2;
+		document.getElementById("options-serial2-parity").value = data.parity2;
+		document.getElementById("port1").value = data.port1;
+		document.getElementById("port2").value = data.port2;
+    }
+	
+	let url = new URL(window.location.href);
+	let param = url.searchParams.get("error");
+	let param2 = url.searchParams.get("success");
+	
+	var div = document.getElementById("div-error");
+	var text = document.getElementById("error-serial");
+	
+	var error = param !== null
+	var success = param2 !== null;
+	
+	loadExternal();
+	loadData(error);
+	
+	var div = document.getElementById("div-success");
+	if (success) {
+		if (param2 == "true") {
+			div.classList.remove("hidden");
+		}
+	}
+	else {
+		div.classList.add("hidden");
+	}
+	
+
+</script>
+
+</html>

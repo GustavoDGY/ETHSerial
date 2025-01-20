@@ -1,0 +1,50 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.top-bar {
+	position: fixed;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: #f9f9f9;
+	height: 50px;
+	width: 100%;
+	border-bottom: 1px solid #dee2e6;
+	z-index: 11;
+}
+
+.top-bar a {
+	text-decoration: none;
+	color: black;
+	margin-right: 20px;
+}
+
+.btn-mobile {
+	border: none;
+	background-color: transparent;
+	margin-left: 5vw;
+}
+
+.div-btn-mobile {
+	width: 100%;
+}
+
+/* < 876px */
+@media(max-width: 876px){
+
+	.top-bar a {
+		min-width: 100px;;
+	}
+
+	.div-btn-mobile {
+		display: block;
+	}
+
+}

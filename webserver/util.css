@@ -1,0 +1,56 @@
+.hidden {
+	display: none;
+}
+
+p {
+	margin-bottom: 0;
+}
+
+.div-main {
+	position: relative;
+	margin-left: 280px;
+	top: 50px;
+	padding: 50px 75px 25px 75px;
+}
+
+.input-span {
+	margin-left: 6px;
+	font-size: 14px;
+	color: #595c5f;
+}
+
+.top-iframe {
+	position: fixed;
+	display: block;
+	border: none;
+	height: 50px; /* Mesma altura do top-bar.html */
+	width: 100%;
+	z-index: 1000;
+}
+
+.side-iframe {
+	margin-top: 50px; /* Mesma altura do top-bar.html */
+	position: fixed;
+	display: block;
+	border: none;
+	height: 100vh;
+	width: 100%;
+}
+
+.btn-save {
+	margin-top: 16px;
+	width: 10vw;
+}
+
+.div-btn-save {
+	display: flex;
+	justify-content: center;
+}
+
+.card-body .card-input:first-child {
+	margin-top: 0;
+}
+
+.card-input {
+	margin-top: 16px;
+}
