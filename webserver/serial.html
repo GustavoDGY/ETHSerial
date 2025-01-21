@@ -24,7 +24,7 @@
 	<div class="div-main">
 	
 		<div class="alert alert-warning hidden" id="div-error" role="alert">
-			<p id="error-serial"></p>
+			<div id="error-serial"></div>
 		</div>
 		
 		<div class="alert alert-success hidden" id="div-success" role="alert">
@@ -206,45 +206,62 @@
 	}
 	
 	async function loadData(error) {
-		
 		const response = await fetch(error ? '/get-data-error' : '/get-data-serial');
 		const data = await response.json();
-		
-		document.getElementById("options-serial1-baudrate").value = data.baudrate1;
-		document.getElementById("options-serial1-databit").value = data.databit1;
-		document.getElementById("options-serial1-stopbit").value = data.stopbit1;
-		document.getElementById("options-serial1-parity").value = data.parity1;
-		document.getElementById("options-serial2-baudrate").value = data.baudrate2;
-		document.getElementById("options-serial2-databit").value = data.databit2;
-		document.getElementById("options-serial2-stopbit").value = data.stopbit2;
-		document.getElementById("options-serial2-parity").value = data.parity2;
-		document.getElementById("port1").value = data.port1;
-		document.getElementById("port2").value = data.port2;
-    }
-	
-	let url = new URL(window.location.href);
-	let param = url.searchParams.get("error");
-	let param2 = url.searchParams.get("success");
-	
-	var div = document.getElementById("div-error");
-	var text = document.getElementById("error-serial");
-	
-	var error = param !== null
-	var success = param2 !== null;
-	
-	loadExternal();
-	loadData(error);
-	
-	var div = document.getElementById("div-success");
-	if (success) {
-		if (param2 == "true") {
-			div.classList.remove("hidden");
+
+		const fieldMap = {
+			"baudrate1": "options-serial1-baudrate", "databit1": "options-serial1-databit",
+			"stopbit1": "options-serial1-stopbit", "parity1": "options-serial1-parity",
+			"baudrate2": "options-serial2-baudrate", "databit2": "options-serial2-databit",
+			"stopbit2": "options-serial2-stopbit", "parity2": "options-serial2-parity",
+			"port1": "port1", "port2": "port2"
+		};
+
+		for (const [key, elementId] of Object.entries(fieldMap)) {
+			const element = document.getElementById(elementId);
+			if (element) {
+				element.value = data[key] || "";
+			}
 		}
 	}
-	else {
-		div.classList.add("hidden");
-	}
-	
+
+	document.addEventListener("DOMContentLoaded", () => {
+
+		let url = new URL(window.location.href);
+		let param = url.searchParams.get("error");
+		let param2 = url.searchParams.get("success");
+
+		var error = param !== null;
+		var success = param2 !== null;
+
+		var div = document.getElementById("div-error");
+		var text = document.getElementById("error-serial");
+		if (error) {
+			div.classList.remove("hidden");
+			if (param == "invalid_port") {
+				text.innerHTML = "<p>Both ports must be between 0 and 65535.</p>";
+			}
+			else if (param == "same_port") {
+				text.innerHTML = "<p>-Both ports are the same.</br>" +
+								"-If you wish to proceed anyway, just save again.</br>" +
+								"-But be cautious, doing so may cause unexpected behavior.</p>";
+			}
+			else if (param == "well_known_port") {
+				text.innerHTML = "<p>-One of ports are set as a Well Known Port such as:</br>" +
+								"80 (HTTP), 443 (HTTPS), 21 (FTP), 22 (SSH), 25 (SMTP) 53 (DNS) or other below 1023.</br>" +
+								"-To avoid this, use a port such as 1024 or above.</br>" +
+								"-If you wish to proceed anyway, just save again.</br>" +
+								"-But be cautious, doing so may cause unexpected behavior.</p>";
+			}
+		}
+		else {
+			div.classList.add("hidden");
+		}
+
+		loadExternal();
+		loadData(error);	
+
+	});
 
 </script>
 
