@@ -242,16 +242,16 @@
 				text.innerHTML = "<p>Both ports must be between 0 and 65535.</p>";
 			}
 			else if (param == "same_port") {
-				text.innerHTML = "<p>-Both ports are the same.</br>" +
-								"-If you wish to proceed anyway, just save again.</br>" +
-								"-But be cautious, doing so may cause unexpected behavior.</p>";
+				text.innerHTML = "<p>- Both ports are the same.</br>" +
+								"- If you wish to proceed anyway, just save again.</br>" +
+								"- But be cautious, doing so may cause unexpected behavior.</p>";
 			}
 			else if (param == "well_known_port") {
-				text.innerHTML = "<p>-One of ports are set as a Well Known Port such as:</br>" +
+				text.innerHTML = "<p>- One of ports are set as a Well Known Port such as:</br>" +
 								"80 (HTTP), 443 (HTTPS), 21 (FTP), 22 (SSH), 25 (SMTP) 53 (DNS) or other below 1023.</br>" +
-								"-To avoid this, use a port such as 1024 or above.</br>" +
-								"-If you wish to proceed anyway, just save again.</br>" +
-								"-But be cautious, doing so may cause unexpected behavior.</p>";
+								"- To avoid this, use a port 1024 or above.</br>" +
+								"- If you wish to proceed anyway, just save again.</br>" +
+								"- But be cautious, doing so may cause unexpected behavior.</p>";
 			}
 		}
 		else {
