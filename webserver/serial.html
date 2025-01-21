@@ -261,6 +261,16 @@
 		loadExternal();
 		loadData(error);	
 
+		var div = document.getElementById("div-success");
+		if (success) {
+			if (param2 == "true") {
+				div.classList.remove("hidden");
+			}
+		}
+		else {
+			div.classList.add("hidden");
+		}
+
 	});
 
 </script>
