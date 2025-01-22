@@ -167,7 +167,9 @@
 			}
 		});
 
-		sideBar.classList.add("hidden");
+		if (window.innerWidth < 876) {
+			sideBar.classList.add("hidden");
+		}
 	}
 
 	async function loadExternal(){
