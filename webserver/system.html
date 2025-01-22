@@ -157,7 +157,7 @@
 		btn.addEventListener("click", ()=>{
 			sideBar.classList.toggle("hidden");
 		});
-
+		
 		window.addEventListener("resize", ()=>{
 			if (window.innerWidth >= 876) {
 				sideBar.classList.remove("hidden");
@@ -166,6 +166,8 @@
 				sideBar.classList.add("hidden");
 			}
 		});
+
+		sideBar.classList.add("hidden");
 	}
 
 	async function loadExternal(){

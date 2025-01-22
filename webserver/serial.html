@@ -189,6 +189,8 @@
 				sideBar.classList.add("hidden");
 			}
 		});
+
+		sideBar.classList.add("hidden");
 	}
 
 	async function loadExternal(){
@@ -249,7 +251,7 @@
 			else if (param == "well_known_port") {
 				text.innerHTML = "<p>- One of ports are set as a Well Known Port such as:</br>" +
 								"80 (HTTP), 443 (HTTPS), 21 (FTP), 22 (SSH), 25 (SMTP) 53 (DNS) or other below 1023.</br>" +
-								"- To avoid this, use a port 1024 or above.</br>" +
+								"- To avoid this, use port 1024 or above.</br>" +
 								"- If you wish to proceed anyway, just save again.</br>" +
 								"- But be cautious, doing so may cause unexpected behavior.</p>";
 			}
