@@ -266,7 +266,14 @@
 				var sub = param.substring(index + 1);
 				text.innerHTML = "<p>The field " + sub.toUpperCase() + " contains an invalid IP</p>";
 				var input = document.getElementById(sub);
-				input.style.border = "1px solid #dc3545"
+				input.style.border = "1px solid #dc3545";
+			}
+			else if (param == "invalid_sta_ssid_empty") {
+				text.innerHTML = "<p>The STA data is invalid</br>" +
+					"The SSID is empty when WiFi mode is set to 'STA'</br>" +
+					"You won't be able to access the webserver without a valid SSID and KEY</p>";
+				var input = document.getElementById("stassid");
+				input.style.border = "1px solid #dc3545";
 			}
 		}
 		else {
