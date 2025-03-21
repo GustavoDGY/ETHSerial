@@ -60,7 +60,7 @@
 			<div class="card card-system">
 				<div class="card-header">
 					<h4>LAN Settings</h4>
-					<p id="dhcp_ip"> LAN IP: </p>
+					<p id="dhcp_ip">Texto gerado no JS</p>
 				</div>
 				<div class="card-body">
 					<div class="card-input input-checkbox">
@@ -216,8 +216,8 @@
 						dhcp_ip.classList.add("hidden");
 					}
 				} 
-				if (key === "dhcp_ip") {
-					element.textContent = data[key] || "";
+				else if (key === "dhcp_ip") {
+					element.textContent = "LAN IP: " + data[key];
 				}
 				else {
 					element.value = data[key] || "";
@@ -290,10 +290,12 @@
 			if (dhcp.checked) {
 				lanInfo.classList.add("hidden");
 				dhcp_ip.classList.remove("hidden");
+				dhcp.value = "on";
 			}
 			else {
 				lanInfo.classList.remove("hidden");
 				dhcp_ip.classList.add("hidden");
+				dhcp.value = "";
 			}
 		});
 	});
