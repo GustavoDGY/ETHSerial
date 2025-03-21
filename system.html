@@ -60,6 +60,7 @@
 			<div class="card card-system">
 				<div class="card-header">
 					<h4>LAN Settings</h4>
+					<p id="dhcp_ip"> LAN IP: </p>
 				</div>
 				<div class="card-body">
 					<div class="card-input input-checkbox">
@@ -194,7 +195,7 @@
 			username: "username", password: "password", dhcp: "dhcp", lan_ip: "lanip",
 			subnet_mask: "netmask", gateway: "gateway", dns: "dns", wifi_mode: "options-wifi-mode",
 			apssid: "apssid", apkey: "apkey", ap_channel: "options-ap-channel",
-			stassid: "stassid", stakey: "stakey",
+			stassid: "stassid", stakey: "stakey", dhcp_ip: "dhcp_ip",
 		};
 
 		for (const [key, elementId] of Object.entries(fieldMap)) {
@@ -205,13 +206,19 @@
 					var dhcp_value = data[key] === "on";
 					element.checked = dhcp_value;
 					const lanInfo = document.getElementById("lan-info");
+					const dhcp_ip = document.getElementById("dhcp_ip");
 					if (dhcp_value == 1) {
 						lanInfo.classList.add("hidden");
+						dhcp_ip.classList.remove("hidden");
 					}
 					else {
 						lanInfo.classList.remove("hidden");
+						dhcp_ip.classList.add("hidden");
 					}
 				} 
+				if (key === "dhcp_ip") {
+					element.textContent = data[key] || "";
+				}
 				else {
 					element.value = data[key] || "";
 				}
@@ -223,6 +230,7 @@
 
 		const dhcp = document.getElementById("dhcp");
 		const lanInfo = document.getElementById("lan-info");
+		const dhcp_ip = document.getElementById("dhcp_ip");
 
 		let url = new URL(window.location.href);
 		let param = url.searchParams.get("error");
@@ -281,9 +289,11 @@
 		dhcp.addEventListener("change", ()=>{
 			if (dhcp.checked) {
 				lanInfo.classList.add("hidden");
+				dhcp_ip.classList.remove("hidden");
 			}
 			else {
 				lanInfo.classList.remove("hidden");
+				dhcp_ip.classList.add("hidden");
 			}
 		});
 	});
