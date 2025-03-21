@@ -41,3 +41,8 @@
 .list span {
 	padding: 0 12px 0 6px;
 }
+
+hr {
+	width: 85%;
+	margin-top: -5px;
+}
