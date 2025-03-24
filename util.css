@@ -55,6 +55,21 @@ p {
 	margin-top: 16px;
 }
 
+.input-checkbox {
+	margin-bottom: 12px;
+}
+
+.input-checkbox p {
+	margin-right: 10px !important;
+	color: #595c5f;
+	font-weight: 600;
+}
+
+.input-checkbox p, input {
+	display: inline-block;
+	margin: 0;
+}
+
 .loading_screen {
 	position: fixed;
 	display: flex;

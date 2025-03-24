@@ -16,21 +16,6 @@ body {
 	margin-bottom: 0;
 }
 
-.input-checkbox {
-	margin-bottom: 12px;
-}
-
-.input-checkbox p {
-	margin-right: 10px !important;
-	color: #595c5f;
-	font-weight: 600;
-}
-
-.input-checkbox p, input {
-	display: inline-block;
-	margin: 0;
-}
-
 /* < 876px */
 @media(max-width: 876px){
 	
