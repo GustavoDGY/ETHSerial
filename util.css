@@ -1,5 +1,5 @@
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 p {
@@ -53,4 +53,17 @@ p {
 
 .card-input {
 	margin-top: 16px;
+}
+
+.loading_screen {
+	position: fixed;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding: 25vh 25vw 25vh 25vw;
+	background-color: rgba(89, 92, 95, 0.35);
+	color: #0a58ca;
+	z-index: 999;
+	align-items: center;
+	justify-content: center;
 }

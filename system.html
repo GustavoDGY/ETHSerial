@@ -20,6 +20,10 @@
 </header>
 
 <body> 
+
+	<div id="loading" class="hidden loading_screen">
+		<h1>Restarting...</h1>
+	</div>
 	
 	<div class="div-main">
 	
@@ -31,7 +35,8 @@
 			<p id="success-system">
 				The data has been stored successfully. </br>
 				The board needs to restart for the configurations to take place. </br>
-				You can click <a href="/restart">HERE</a> to restart now or restart manually later.
+				You can click <a onclick="loading_screen()" href="/restart">HERE</a> 
+				to restart now or restart manually later.
 			</p>
 		</div>
 	
@@ -151,6 +156,12 @@
 </body>
 
 <script>
+
+	function loading_screen(){
+		document.body.style.overflow = "hidden";
+		var loading_div = document.getElementById("loading");
+		loading.classList.remove("hidden");
+	}
 
 	function startSideBar() {
 		var btn = document.getElementById("btn-mobile");
