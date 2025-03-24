@@ -13,3 +13,52 @@
 .card-general {
     margin-bottom: 16px;
 }
+
+.confirm-reset {
+    position: absolute;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 35vh 35vw 35vh 35vw;
+    width: 100%;
+    height: 100%;
+    z-index: 899;
+}
+
+.confirm-aux {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #595c5f;
+    border-radius: 10px;
+}
+
+.warning-text {
+    margin-bottom: 15vh !important;
+}
+
+.btn-reset {
+    width: 15vw;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+.btn-reset:hover {
+    background-color: #c82333 !important;
+    border-color: #bd2130 !important;
+}
+
+.div-close-confirm {
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+}
+
+.close-confirm {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 2vh;
+}

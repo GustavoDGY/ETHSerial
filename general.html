@@ -24,6 +24,20 @@
 	<div id="loading" class="hidden loading_screen">
 		<h1 data-I18N="restarting">Restarting...</h1>
 	</div>
+
+    <div class="confirm-reset hidden" id="confirm-reset">
+        <div class="confirm-aux">
+            <div class="div-close-confirm">
+               <button class="btn btn-primary close-confirm" type="button" onclick="confirmReset()">
+                    X
+               </button> 
+            </div>
+            <h3 class="warning-text" data-I18N="confirm-warning">Warning</h1>
+            <a href="/factory-reset">
+                <button class="btn btn-primary btn-reset" data-I18N="confirm" onclick="loading_screen()">Confirm</button>
+            </a>
+        </div>
+    </div>
 	
 	<div class="div-main">
 	
@@ -80,7 +94,7 @@
 				</div>
                 <div class="card-body">
                     <span class="input-span" data-I18N="lang">Language</span>
-                    <select class="form-control" id="lang-choice" name="lang">
+                    <select class="form-control" id="lang-choice" onchange="" name="lang">
                         <option value="1" selected>&#127463;&#127479; Português</option>
                         <option value="2">&#127482;&#127480; English</option>
                     </select>
@@ -92,7 +106,9 @@
 					<h4 data-I18N="factory_reset">Factory Reset</h4>
 				</div>
                 <div class="card-body">
-
+                    <button class="btn btn-primary" data-I18N="factory_reset" onclick="confirmReset()" type="button">
+                        Factory Reset
+                    </button>
                 </div>
             </div>
 			
@@ -108,6 +124,16 @@
 
 <script src="scripts.js"></script>
 <script>
+
+    function confirmReset(){
+        var div = document.getElementById("confirm-reset");
+        if (div.classList.contains("hidden")){
+            div.classList.remove("hidden");
+        }
+        else {
+            div.classList.add("hidden");
+        }
+    }
 
 	async function loadData(error) {
 		const response = await fetch(error ? '/get-data-error' : '/get-data-general');

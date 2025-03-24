@@ -38,11 +38,13 @@
         "restart": "<span><i class='fa fa-refresh'></i></span> Reiniciar",
         "lang": "Linguagem",
         "factory_reset": "Restaurar para Configuração de Fábrica",
+        "confirm-warning": "ATENÇÃO: Ao clicar no botão de 'Confirmar' o conversor será restaurado para sua versão de fábrica. Todos seus dados e configurações serão perdidos no processo." ,
 
         "sign_out": "Deslogar",
         "restarting": "Reiniciando...",
         "success_msg": "Os dados foram salvos com sucesso.</br>O conversor precisa ser reiniciado para que as alterações sejam aplicadas.</br>Você pode clicar <a onclick='loading_screen()' href='/restart'>AQUI</a> para reinicar agora ou reinicar manualmente mais tarde.",
-        "save": "Salvar"
+        "save": "Salvar",
+        "confirm": "Confirmar"
     },
     "en": {
         "system_h": "SYSTEM SETTINGS",
@@ -83,10 +85,12 @@
         "restart": "<span><i class='fa fa-refresh'></i></span> Restart",
         "lang": "Language",
         "factory_reset": "Factory Reset",
+        "confirm-warning": "ATENTION: Clicking on the 'Confirm' button will factory reset the converter. All your data will be lost in the process.",
 
         "sign_out": "Sign Out",
         "restarting": "Reloading...",
         "success_msg": "The data has been stored successfully.</br>The board needs to restart for the configurations to take place. </br>You can click <a onclick='loading_screen()' href='/restart'>HERE</a> to restart now or restart manually later.",
-        "save": "Save"
+        "save": "Save",
+        "confirm": "Confirm"
     }
 }

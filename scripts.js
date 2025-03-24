@@ -5,7 +5,6 @@ async function loadLang(path, language) {
     var language_nodes = document.querySelectorAll("[data-I18N]");
     language_nodes.forEach(element => {
         var key = element.getAttribute("data-I18N");
-        console.log(element);
         if (element.nodeName === "INPUT"){
             element.placeholder = jsonData[language][key];
         }
@@ -28,7 +27,16 @@ async function loadExternal(){
 
     startSideBar();
 
-    await loadLang("language.json", "pt");
+    const response = await fetch('/get-data-general');
+	const data = await response.json();
+
+    var language;
+    switch(parseInt(data["lang"])){
+        case 1: language = "pt";
+        case 2: language = "en";
+    }
+
+    await loadLang("language.json", language);
 }
 
 function startSideBar() {
