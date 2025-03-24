@@ -76,9 +76,14 @@ p {
 	width: 100%;
 	height: 100%;
 	padding: 25vh 25vw 25vh 25vw;
-	background-color: rgba(89, 92, 95, 0.35);
+	background-color: rgba(195, 203, 211, 0.35);
 	color: #0a58ca;
 	z-index: 999;
 	align-items: center;
 	justify-content: center;
+}
+
+.loading_screen h1 {
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 10px;
 }
