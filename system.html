@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 
 <head>
 	<meta charset="UTF-8">
@@ -22,7 +22,7 @@
 <body> 
 
 	<div id="loading" class="hidden loading_screen">
-		<h1>Restarting...</h1>
+		<h1 data-I18N="restarting">Restarting...</h1>
 	</div>
 	
 	<div class="div-main">
@@ -32,7 +32,7 @@
 		</div>
 		
 		<div class="alert alert-success hidden" id="div-success" role="alert">
-			<p id="success-system">
+			<p id="success-system" data-I18N="success_msg">
 				The data has been stored successfully. </br>
 				The board needs to restart for the configurations to take place. </br>
 				You can click <a onclick="loading_screen()" href="/restart">HERE</a> 
@@ -41,31 +41,31 @@
 		</div>
 	
 		<div class="page-title">
-			<h5> System Settings </h3>
+			<h5 data-I18N="system_l"> System Settings </h3>
 		</div>
 	
 		<form method="POST" id="form-post">
 		
 			<div class="card card-system">
 				<div class="card-header">
-					<h4>Authentication</h4>
+					<h4 data-I18N="auth">Authentication</h4>
 				</div>
 				<div class="card-body">
 					<div class="auth-username card-input">
-						<span class="input-span">Username</span>
-						<input class="form-control" type="text" name="username" id="username" placeholder="Username">
+						<span class="input-span" data-I18N="username">Username</span>
+						<input class="form-control" type="text" name="username" id="username" data-I18N="username" placeholder="Username">
 					</div>
 					<div class="auth-pswd card-input">
-						<span class="input-span">Password</span>
-						<input class="form-control" type="password" name="password" id="password" placeholder="Password">
+						<span class="input-span" data-I18N="password">Password</span>
+						<input class="form-control" type="password" name="password" id="password" data-I18N="password" placeholder="Password">
 					</div>
 				</div>
 			</div>
 			
 			<div class="card card-system">
 				<div class="card-header">
-					<h4>LAN Settings</h4>
-					<p id="dhcp_ip">Texto gerado no JS</p>
+					<h4 data-I18N="lan">LAN Settings</h4>
+					<p id="dhcp_ip"></p>
 				</div>
 				<div class="card-body">
 					<div class="card-input input-checkbox">
@@ -74,20 +74,20 @@
 					</div>
 					<div id="lan-info">
 						<div class="card-input">
-							<span class="input-span">LAN IP</span>
-							<input class="form-control" type="text" name="lanip" id="lanip" placeholder="LAN IP">
+							<span class="input-span" data-I18N="lan_ip">LAN IP</span>
+							<input class="form-control" type="text" name="lanip" id="lanip" data-I18N="lan_ip" placeholder="LAN IP">
 						</div>
 						<div class="card-input">
-							<span class="input-span">Subnet Mask</span>
-							<input class="form-control" type="text" name="netmask" id="netmask" placeholder="Subnet Mask">
+							<span class="input-span" data-I18N="subnet_mask">Subnet Mask</span>
+							<input class="form-control" type="text" name="netmask" id="netmask" data-I18N="subnet_mask" placeholder="Subnet Mask">
 						</div>
 						<div class="card-input">
-							<span class="input-span">Gateway</span>
-							<input class="form-control" type="text" name="gateway" id="gateway" placeholder="Gateway">
+							<span class="input-span" data-I18N="gateway">Gateway</span>
+							<input class="form-control" type="text" name="gateway" id="gateway" data-I18N="gateway" placeholder="Gateway">
 						</div>
 						<div class="card-input">
-							<span class="input-span">DNS</span>
-							<input class="form-control" type="text" name="dns" id="dns" placeholder="DNS">
+							<span class="input-span" data-I18N="dns">DNS</span>
+							<input class="form-control" type="text" name="dns" id="dns" data-I18N="dns" placeholder="DNS">
 						</div>
 					</div>
 				</div>
@@ -95,11 +95,11 @@
 			
 			<div class="card card-system">
 				<div class="card-header">
-					<h4>WiFi Settings</h4>
+					<h4 data-I18N="wifi">WiFi Settings</h4>
 				</div>
 				<div class="card-body">
 					<div class="card-input input-checkbox">
-						<span class="input-span">WiFi Mode</span>
+						<span class="input-span" data-I18N="wifi_mode">WiFi Mode</span>
 						<select class="form-control" id="options-wifi-mode" name="wifi-mode">
 							<option value="1">AP</option>
 							<option value="2">STA</option>
@@ -107,15 +107,15 @@
 						</select>
 					</div>
 					<div class="card-input">
-						<span class="input-span">AP SSID</span>
-						<input class="form-control" type="text" name="apssid" id="apssid" placeholder="AP SSID">
+						<span class="input-span" data-I18N="ap_ssid">AP SSID</span>
+						<input class="form-control" type="text" name="apssid" id="apssid" data-I18N="ap_ssid" placeholder="AP SSID">
 					</div>
 					<div class="card-input">
-						<span class="input-span">AP Key</span>
-						<input class="form-control" type="password" name="apkey" id="apkey" placeholder="AP Key">
+						<span class="input-span" data-I18N="ap_key">AP Key</span>
+						<input class="form-control" type="password" name="apkey" id="apkey" data-I18N="ap_key" placeholder="AP Key">
 					</div>
 					<div class="card-input">
-						<span class="input-span">AP Channel</span>
+						<span class="input-span" data-I18N="ap_channel">AP Channel</span>
 						<select class="form-control" id="options-ap-channel" name="ap-channel">
 							<option value="0" select>AUTO</option>
 							<option value="1">CH1</option>
@@ -134,11 +134,11 @@
 						</select>
 					</div>
 					<div class="card-input">
-						<span class="input-span">STA SSID</span>
+						<span class="input-span" data-I18N="sta_ssid">STA SSID</span>
 						<input class="form-control" type="text" name="stassid" id="stassid" placeholder="STA SSID">
 					</div>
 					<div class="card-input">
-						<span class="input-span">STA Key</span>
+						<span class="input-span" data-I18N="sta_key">STA Key</span>
 						<input class="form-control" type="password" name="stakey" id="stakey" placeholder="STA Key">
 					</div>
 				</div>
@@ -146,7 +146,7 @@
 			
 			
 			<div class="div-btn-save">
-				<button class="btn btn-primary btn-save" id="btn-save-system" type="submit">Save</button>
+				<button class="btn btn-primary btn-save" id="btn-save-system" data-I18N="save" type="submit">Save</button>
 			</div>
 			
 		</form>
@@ -155,48 +155,8 @@
 
 </body>
 
+<script src="scripts.js"></script>
 <script>
-
-	function loading_screen(){
-		document.body.style.overflow = "hidden";
-		var loading_div = document.getElementById("loading");
-		loading.classList.remove("hidden");
-	}
-
-	function startSideBar() {
-		var btn = document.getElementById("btn-mobile");
-		const sideBar = document.getElementById("side-bar")
-		btn.addEventListener("click", ()=>{
-			sideBar.classList.toggle("hidden");
-		});
-		
-		window.addEventListener("resize", ()=>{
-			if (window.innerWidth >= 876) {
-				sideBar.classList.remove("hidden");
-			}
-			else {
-				sideBar.classList.add("hidden");
-			}
-		});
-
-		if (window.innerWidth < 876) {
-			sideBar.classList.add("hidden");
-		}
-	}
-
-	async function loadExternal(){
-	
-		const sideBar = await fetch("side-bar.html");
-		const sideBarContent = await sideBar.text();
-		
-		const topBar = await fetch("top-bar.html");
-		const topBarContent = await topBar.text();
-		
-		document.getElementById("side-bar").innerHTML = sideBarContent;
-		document.getElementById("top-bar").innerHTML = topBarContent;
-
-		startSideBar();
-	}
 
 	async function loadData(error) {
 		const response = await fetch(error ? '/get-data-error' : '/get-data-system');
@@ -316,8 +276,8 @@
 				dhcp.value = "";
 			}
 		});
+		
 	});
-
 
 </script>
 
