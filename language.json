@@ -42,9 +42,16 @@
 
         "sign_out": "Deslogar",
         "restarting": "Reiniciando...",
-        "success_msg": "Os dados foram salvos com sucesso.</br>O conversor precisa ser reiniciado para que as alterações sejam aplicadas.</br>Você pode clicar <a onclick='loading_screen()' href='/restart'>AQUI</a> para reinicar agora ou reinicar manualmente mais tarde.",
+        "success_msg": "Os dados foram salvos com sucesso.</br>O conversor precisa ser reiniciado para que as alterações sejam aplicadas.</br>Você pode clicar <a onclick='loading_screen()' href='/restart'>AQUI</a> para reiniciar agora ou reiniciar manualmente mais tarde.",
         "save": "Salvar",
-        "confirm": "Confirmar"
+        "confirm": "Confirmar",
+
+        "invalid_auth": "Usuário e senha precisam de 5 ou mais caracteres",
+        "invalid_ap": "Os dados da rede AP estão inválidos</br>O SSID precisa ter entre 5 e 32 caracteres</br>A senha precisa de pelo menos 8 caracteres",
+        "invalid_sta": "Os dados da rede STA estão inválidos</br>O SSID precisa ter entre 5 e 32 caracteres</br>A senha precisa de pelo menos 8 caracteres",
+        "invalid_sta_ssid_empty": "Os dados da rede STA estão inválidos</br>O SSID não pode estar vazio quando o Modo Wi-Fi está selecionado 'STA'</br>Você não vai ser capaz de acessar o webserver com o SSID e a senha inválidas",
+        "invalid_ip": "O campo <b id='sub-ip'></b> está com um IP inválido",
+        "invalid_space": "O campo <b id='sub-space'></b> não pode conter espaçamento entre as palavras"
     },
     "en": {
         "system_h": "SYSTEM SETTINGS",
@@ -91,6 +98,13 @@
         "restarting": "Reloading...",
         "success_msg": "The data has been stored successfully.</br>The board needs to restart for the configurations to take place. </br>You can click <a onclick='loading_screen()' href='/restart'>HERE</a> to restart now or restart manually later.",
         "save": "Save",
-        "confirm": "Confirm"
+        "confirm": "Confirm",
+
+        "invalid_auth": "User and password must be 5 characters or higher",
+        "invalid_ap": "The AP data is invalid</br>The SSID must be between 5 and 32 characters</br>The KEY must have atleast 8 characters",
+        "invalid_sta": "The STA data is invalid</br> The SSID must be between 5 and 32 characters</br>The KEY must have atleast 8 characters",
+        "invalid_sta_ssid_empty": "The STA data is invalid</br>The SSID is empty when WiFi mode is set to 'STA'</br>You won't be able to access the webserver without a valid SSID and KEY",
+        "invalid_ip": "The field <b id='sub-ip'></b> contains an invalid IP",
+        "invalid_space": "The field <b id='sub-space'></b> contains in-between spaces that are not allowed"
     }
 }

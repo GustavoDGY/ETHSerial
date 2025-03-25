@@ -28,7 +28,12 @@
 	<div class="div-main">
 	
 		<div class="alert alert-warning hidden" id="div-error" role="alert">
-			<p id="error-system"></p>
+			<p id="invalid_auth" data-I18N="invalid_auth" class="hidden"></p>
+			<p id="invalid_ap" data-I18N="invalid_ap" class="hidden"></p>
+			<p id="invalid_sta" data-I18N="invalid_sta" class="hidden"></p>
+			<p id="invalid_sta_ssid_empty" data-I18N="invalid_sta_ssid_empty" class="hidden"></p>
+			<p id="invalid_space" data-I18N="invalid_space" class="hidden"></p>
+			<p id="invalid_ip" data-I18N="invalid_ip" class="hidden"></p>
 		</div>
 		
 		<div class="alert alert-success hidden" id="div-success" role="alert">
@@ -211,44 +216,28 @@
 		var success = param2 !== null;
 		
 		var div = document.getElementById("div-error");
-		var text = document.getElementById("error-system");
+		var text = document.getElementById(param);
 		if (error) {
 			div.classList.remove("hidden");
-			if (param == "invalid_auth") {
-				text.innerHTML = "<p>User and password must be 5 characters or higher</p>";
-			}
-			else if (param.indexOf("invalid_space_") !== -1) {
+
+			//Adicionando estilo para elementos dinâmicos
+			if (param.indexOf("invalid_space_") !== -1 || param.indexOf("invalid_ip_") !== -1) {
 				var index = param.lastIndexOf("_");
 				var sub = param.substring(index + 1);
-				text.innerHTML = "The field " + sub.toUpperCase() + " contains in-between spaces that are not allowed";
+
 				var input = document.getElementById(sub);
 				input.style.border = "1px solid #dc3545"
+
+				document.getElementById(param.substring(0, index)).classList.remove("hidden");
 			}
-			else if (param == "invalid_ap") {
-				text.innerHTML = "<p>The AP data is invalid</br>The SSID must be between 5 and 32 characters</br>" +
-									"The KEY must have atleast 8 characters</p>";
+			else {
+				text.classList.remove("hidden"); //Se não for elemento dinâmico, libera o elemento estático mencionado.
 			}
-			else if (param == "invalid_sta") {
-				text.innerHTML = "<p>The STA data is invalid</br> The SSID must be between 5 and 32 characters</br>" +
-									"The KEY must have atleast 8 characters</p>";
-			}
-			else if (param.indexOf("invalid_ip_") !== -1) {
-				var index = param.lastIndexOf("_");
-				var sub = param.substring(index + 1);
-				text.innerHTML = "<p>The field " + sub.toUpperCase() + " contains an invalid IP</p>";
-				var input = document.getElementById(sub);
+
+			//Adicionando estilo para elementos estáticos
+			if (param == "invalid_sta_ssid_empty") {
 				input.style.border = "1px solid #dc3545";
 			}
-			else if (param == "invalid_sta_ssid_empty") {
-				text.innerHTML = "<p>The STA data is invalid</br>" +
-					"The SSID is empty when WiFi mode is set to 'STA'</br>" +
-					"You won't be able to access the webserver without a valid SSID and KEY</p>";
-				var input = document.getElementById("stassid");
-				input.style.border = "1px solid #dc3545";
-			}
-		}
-		else {
-			div.classList.add("hidden");
 		}
 		
 		loadExternal();
