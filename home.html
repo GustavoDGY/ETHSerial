@@ -66,13 +66,20 @@
 	document.addEventListener("DOMContentLoaded", async ()=>{
 
 		const response = await fetch('/get-data-general');
+
+		console.log(response);
+
 		const data = await response.json();
+
+		console.log(data);
 
 		var language;
 		switch(parseInt(data["lang"])){
 			case 1: language = "pt"; break;
 			case 2: language = "en"; break;
     	}
+
+		console.log(language);
 
 		loadLang("language.json", language);
 	});
