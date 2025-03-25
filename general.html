@@ -97,7 +97,7 @@
 				</div>
                 <div class="card-body">
                     <span class="input-span" data-I18N="lang">Language</span>
-                    <select class="form-control" id="lang-choice" onchange="save_and_reload()" name="lang">
+                    <select class="form-control" id="lang-choice" name="lang">
                         <option value="1" selected>&#127463;&#127479; Português</option>
                         <option value="2">&#127482;&#127480; English</option>
                     </select>
@@ -127,13 +127,6 @@
 
 <script src="scripts.js"></script>
 <script>
-
-	function save_and_reload(){
-		var form = document.getElementById("form-post");
-		form.submit();
-		location.reload();
-	}
-
     function confirmReset(){
         var div = document.getElementById("confirm-reset");
         if (div.classList.contains("hidden")){
