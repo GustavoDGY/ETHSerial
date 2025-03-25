@@ -32,16 +32,21 @@ async function loadExternal(){
 
     var language;
     switch(parseInt(data["lang"])){
-        case 1: language = "pt";
-        case 2: language = "en";
+        case 1: language = "pt"; break;
+        case 2: language = "en"; break;
     }
 
     await loadLang("language.json", language);
 }
 
+function reload(){
+    location.reload();
+}
+
 function startSideBar() {
     var btn = document.getElementById("btn-mobile");
-    const sideBar = document.getElementById("side-bar")
+    var divBtn = document.getElementById("div-btn-mobile");
+    const sideBar = document.getElementById("side-bar");
     btn.addEventListener("click", ()=>{
         sideBar.classList.toggle("hidden");
     });
@@ -49,14 +54,17 @@ function startSideBar() {
     window.addEventListener("resize", ()=>{
         if (window.innerWidth >= 876) {
             sideBar.classList.remove("hidden");
+            divBtn.classList.add("hidden");
         }
         else {
             sideBar.classList.add("hidden");
+            divBtn.classList.remove("hidden");
         }
     });
 
     if (window.innerWidth < 876) {
         sideBar.classList.add("hidden");
+        divBtn.classList.remove("hidden");
     }
 }
 

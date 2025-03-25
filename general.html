@@ -28,11 +28,14 @@
     <div class="confirm-reset hidden" id="confirm-reset">
         <div class="confirm-aux">
             <div class="div-close-confirm">
-               <button class="btn btn-primary close-confirm" type="button" onclick="confirmReset()">
-                    X
-               </button> 
+				<button class="close-confirm" type="button" onclick="confirmReset()">
+					&times;
+				</button> 
             </div>
-            <h3 class="warning-text" data-I18N="confirm-warning">Warning</h1>
+            <h4 class="warning-text" data-I18N="confirm-warning">
+				ATENTION: Clicking on the 'Confirm' button will factory reset the converter. 
+				All your data will be lost in the process.
+			</h4>
             <a href="/factory-reset">
                 <button class="btn btn-primary btn-reset" data-I18N="confirm" onclick="loading_screen()">Confirm</button>
             </a>
@@ -94,7 +97,7 @@
 				</div>
                 <div class="card-body">
                     <span class="input-span" data-I18N="lang">Language</span>
-                    <select class="form-control" id="lang-choice" onchange="" name="lang">
+                    <select class="form-control" id="lang-choice" onchange="reload()" name="lang">
                         <option value="1" selected>&#127463;&#127479; Português</option>
                         <option value="2">&#127482;&#127480; English</option>
                     </select>
@@ -129,9 +132,11 @@
         var div = document.getElementById("confirm-reset");
         if (div.classList.contains("hidden")){
             div.classList.remove("hidden");
+			document.body.style.overflow = "hidden";
         }
         else {
             div.classList.add("hidden");
+			document.body.style.overflow = "auto";
         }
     }
 

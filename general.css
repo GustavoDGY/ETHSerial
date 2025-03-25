@@ -16,9 +16,9 @@
 
 .confirm-reset {
     position: absolute;
-    display: flex;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 35vh 35vw 35vh 35vw;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 22.5vh 27.5vw 22.5vh 27.5vw;
     width: 100%;
     height: 100%;
     z-index: 899;
@@ -26,18 +26,20 @@
 
 .confirm-aux {
     background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     width: 100%;
     height: 100%;
-    border: 2px solid #595c5f;
-    border-radius: 10px;
+    min-height: 350px;
+    max-height: 350px;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
 }
 
 .warning-text {
-    margin-bottom: 15vh !important;
+    margin-bottom: 5vh !important;
+    border: 1px solid #dee2e6;
+    border-right: none;
+    border-left: none;
+    padding: 22px;
 }
 
 .btn-reset {
@@ -52,13 +54,62 @@
 }
 
 .div-close-confirm {
-    display: flex;
-    justify-content: flex-end;
-    width: 80%;
+    text-align: end;
+    width: 100%;
+    padding: 0.45rem;
+    background-color: rgba(222, 226, 230, 0.4);
+    border-radius: 1px 1px 0 0;
 }
 
 .close-confirm {
     width: 30px;
     height: 30px;
-    margin-bottom: 2vh;
+    border: none;
+    text-decoration: none;
+    background: none;
+    font-size: 32px;
+    margin-right: 1rem;
+}
+
+.close-confirm:hover {
+    color: #a8aeb4;
+}
+
+/* < 876px */
+@media(max-width: 876px){
+	
+	.div-main {
+		position: relative;
+		margin: 0 !important;
+		top: 50px !important;
+		padding: 5vw 5vh 5vw 5vh !important;
+	}
+
+	.btn-save {
+		min-width: 25vw;
+	}
+	
+    .warning-text {
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 586px){
+    .warning-text {
+        font-size: 14px;
+    }
+
+    .btn-reset {
+        width: 20vw;
+    }
+}
+
+@media(max-width: 376px){
+    .warning-text {
+        font-size: 12px;
+    }
+
+    .btn-reset {
+        width: 24vw;
+    }
 }
