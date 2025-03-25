@@ -50,8 +50,11 @@
         "invalid_ap": "Os dados da rede AP estão inválidos</br>O SSID precisa ter entre 5 e 32 caracteres</br>A senha precisa de pelo menos 8 caracteres",
         "invalid_sta": "Os dados da rede STA estão inválidos</br>O SSID precisa ter entre 5 e 32 caracteres</br>A senha precisa de pelo menos 8 caracteres",
         "invalid_sta_ssid_empty": "Os dados da rede STA estão inválidos</br>O SSID não pode estar vazio quando o Modo Wi-Fi está selecionado 'STA'</br>Você não vai ser capaz de acessar o webserver com o SSID e a senha inválidas",
-        "invalid_ip": "O campo <b id='sub-ip'></b> está com um IP inválido",
-        "invalid_space": "O campo <b id='sub-space'></b> não pode conter espaçamento entre as palavras"
+        "invalid_ip": "O campo selecionado está com um IP inválido",
+        "invalid_space": "O campo selecionado não pode conter espaçamento entre as palavras",
+        "invalid_port": "Ambas as portas precisam estar entre 0 e 65535",
+        "same_port": "As portas estão definidas com o mesmo valor",
+        "well_known_port": "Uma das portas está definida como um valor de 'Porta Bem Conhecida' como:</br>80(HTTP), 443(HTTPS), 21(FTP), 22(SSH), 25(SMTP), 53(DNS) ou outra abaixo de 1024</br>Para evitar isso, utilize uma porta com valor de 1024 para cima</br>Se você quiser continuar mesmo assim, apenas salve novamente.</br>Mas tenha cuidado, fazer isso pode gerar problemas inesperados."
     },
     "en": {
         "system_h": "SYSTEM SETTINGS",
@@ -104,7 +107,10 @@
         "invalid_ap": "The AP data is invalid</br>The SSID must be between 5 and 32 characters</br>The KEY must have atleast 8 characters",
         "invalid_sta": "The STA data is invalid</br> The SSID must be between 5 and 32 characters</br>The KEY must have atleast 8 characters",
         "invalid_sta_ssid_empty": "The STA data is invalid</br>The SSID is empty when WiFi mode is set to 'STA'</br>You won't be able to access the webserver without a valid SSID and KEY",
-        "invalid_ip": "The field <b id='sub-ip'></b> contains an invalid IP",
-        "invalid_space": "The field <b id='sub-space'></b> contains in-between spaces that are not allowed"
+        "invalid_ip": "The selected field contains an invalid IP",
+        "invalid_space": "The selected field contains in-between spaces that are not allowed",
+        "invalid_port": "Both ports must be between 0 and 65535",
+        "same_port": "Both ports are the same",
+        "well_known_port": "One of the ports are set as a Well Known Port such as:</br>80(HTTP), 443(HTTPS), 21(FTP), 22(SSH), 25(SMTP), 53(DNS) or other below 1024</br>To avoid this, use port 1024 or above</br>If you wish to proceed anyway just save again</br>But be cautious, doing so may cause unexpected behavior."
     }
 }

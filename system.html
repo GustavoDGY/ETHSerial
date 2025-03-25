@@ -221,7 +221,16 @@
 			div.classList.remove("hidden");
 
 			//Adicionando estilo para elementos dinâmicos
-			if (param.indexOf("invalid_space_") !== -1 || param.indexOf("invalid_ip_") !== -1) {
+			var is_dinamic = false;
+			const list_dinamic = ["invalid_space_", "invalid_ip_"];
+			for (i = 0; i < list_dinamic.length; i++){
+				if (param.indexOf(list_dinamic[i]) !== -1){
+					is_dinamic = true;
+					break;
+				}
+			}
+
+			if (is_dinamic) {
 				var index = param.lastIndexOf("_");
 				var sub = param.substring(index + 1);
 

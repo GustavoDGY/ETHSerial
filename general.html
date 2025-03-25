@@ -45,7 +45,6 @@
 	<div class="div-main">
 	
 		<div class="alert alert-warning hidden" id="div-error" role="alert">
-			<p id="error-general"></p>
 		</div>
 		
 		<div class="alert alert-success hidden" id="div-success" role="alert">
@@ -178,17 +177,11 @@
 		var success = param2 !== null;
 		
 		var div = document.getElementById("div-error");
-		var text = document.getElementById("error-general");
+		var text = document.getElementById(param);
 		if (error) {
-			div.classList.remove("hidden");
-			if (param == "invalid_auth") {
-				text.innerHTML = "<p>User and password must be 5 characters or higher</p>";
-			}
+			//Sem erro, mas continua aqui para o futuro caso precise
 		}
-		else {
-			div.classList.add("hidden");
-		}
-		
+
 		loadExternal();
 		loadData(error);	
 		

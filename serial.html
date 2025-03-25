@@ -28,7 +28,9 @@
 	<div class="div-main">
 	
 		<div class="alert alert-warning hidden" id="div-error" role="alert">
-			<div id="error-serial"></div>
+			<p id="invalid_port" data-I18N="invalid_port" class="hidden"></p>
+			<p id="same_port" data-I18N="same_port" class="hidden"></p>
+			<p id="well_known_port" data-I18N="well_known_port" class="hidden"></p>
 		</div>
 		
 		<div class="alert alert-success hidden" id="div-success" role="alert">
@@ -210,25 +212,10 @@
 		var success = param2 !== null;
 
 		var div = document.getElementById("div-error");
-		var text = document.getElementById("error-serial");
+		var text = document.getElementById(param);
 		if (error) {
 			div.classList.remove("hidden");
-			if (param == "invalid_port") {
-				text.innerHTML = "<p>Both ports must be between 0 and 65535.</p>";
-			}
-			else if (param == "same_port") {
-				text.innerHTML = "<p>Both ports are the same.</br>";
-			}
-			else if (param == "well_known_port") {
-				text.innerHTML = "<p>- One of ports are set as a Well Known Port such as:</br>" +
-								"80 (HTTP), 443 (HTTPS), 21 (FTP), 22 (SSH), 25 (SMTP) 53 (DNS) or other below 1023.</br>" +
-								"- To avoid this, use port 1024 or above.</br>" +
-								"- If you wish to proceed anyway, just save again.</br>" +
-								"- But be cautious, doing so may cause unexpected behavior.</p>";
-			}
-		}
-		else {
-			div.classList.add("hidden");
+			text.classList.remove("hidden");
 		}
 
 		loadExternal();
