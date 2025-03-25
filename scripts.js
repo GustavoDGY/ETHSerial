@@ -27,7 +27,6 @@ async function loadExternal(){
 
     startSideBar();
 
-    /*
     const response = await fetch('/get-data-general');
 	const data = await response.json();
 
@@ -36,9 +35,8 @@ async function loadExternal(){
         case 1: language = "pt"; break;
         case 2: language = "en"; break;
     }
-        */
 
-    await loadLang("language.json", "pt");
+    await loadLang("language.json", language);
 }
 
 function startSideBar() {
