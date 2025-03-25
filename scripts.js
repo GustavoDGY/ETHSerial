@@ -4,6 +4,7 @@ async function loadLang(path, language) {
 
     var language_nodes = document.querySelectorAll("[data-I18N]");
     language_nodes.forEach(element => {
+        console.log(element);
         var key = element.getAttribute("data-I18N");
         if (element.nodeName === "INPUT"){
             element.placeholder = jsonData[language][key];
