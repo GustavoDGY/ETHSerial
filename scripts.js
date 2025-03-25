@@ -39,10 +39,6 @@ async function loadExternal(){
     await loadLang("language.json", language);
 }
 
-function reload(){
-    location.reload();
-}
-
 function startSideBar() {
     var btn = document.getElementById("btn-mobile");
     var divBtn = document.getElementById("div-btn-mobile");
