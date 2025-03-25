@@ -24,10 +24,13 @@ body {
 
 .title-home h2 {
 	font-optical-sizing: auto;
-	font-weight: 600;
+	font-weight: 700;
 	font-style: normal;
+	font-style: italic;
 	margin: 0;
-	color: #515151;
+	background: linear-gradient(90deg, #9b83ff, #5be7a1);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .btn-login {
@@ -36,7 +39,7 @@ body {
 }
 
 .img-logo {
-	width: 64px;
+	width: 75px;
 	height: 64px;
 	margin-right: 16px;
 }
