@@ -29,12 +29,12 @@
 				<div class="card card-home">
 					<div class="card-body">
 						<div class="card-input">
-							<span class="input-span">Username</span>
-							<input class="form-control" type="text" name="user" placeholder="User">
+							<span class="input-span" data-I18N="username">Username</span>
+							<input class="form-control" type="text" name="user" data-I18N="username" placeholder="User">
 						</div>
 						<div class="card-input">
-							<span class="input-span">Password</span>
-							<input class="form-control" type="password" name="password" placeholder="Password">
+							<span class="input-span" data-I18N="password">Password</span>
+							<input class="form-control" type="password" name="password"  data-I18N="password" placeholder="Password">
 						</div>
 						<div class="card-input div-btn-save">
 							<button class="btn btn-primary btn-login" type="submit">Login</button>
@@ -48,6 +48,7 @@
 	
 </body>
 
+<script src="scripts.js"></script>
 <script>
 	let url = new URL(window.location.href);
 	let param = url.searchParams.get("error");
@@ -61,6 +62,20 @@
 	else {
 		div.classList.add("hidden");
 	}
+
+	document.addEventListener("DOMContentLoaded", async ()=>{
+
+		const response = await fetch('/get-data-general');
+		const data = await response.json();
+
+		var language;
+		switch(parseInt(data["lang"])){
+			case 1: language = "pt"; break;
+			case 2: language = "en"; break;
+    	}
+
+		loadLang("language.json", language);
+	});
 	
 </script>
 

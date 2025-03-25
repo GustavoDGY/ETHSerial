@@ -15,7 +15,7 @@
 }
 
 .confirm-reset {
-    position: absolute;
+    position: fixed;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.65);
     padding: 22.5vh 27.5vw 22.5vh 27.5vw;
