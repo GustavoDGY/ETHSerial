@@ -8,10 +8,15 @@ body {
 	padding: 0;
 }
 
+.div-signout {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+
 .top-bar {
 	position: fixed;
 	display: flex;
-	justify-content: flex-end;
 	align-items: center;
 	background-color: #f9f9f9;
 	height: 50px;
@@ -23,7 +28,8 @@ body {
 .top-bar a {
 	text-decoration: none;
 	color: black;
-	margin-right: 20px;
+	margin-right: 3.5vw;
+	margin-left: 12px;
 }
 
 .top-bar a:hover {
