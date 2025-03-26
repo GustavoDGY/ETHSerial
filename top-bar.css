@@ -14,6 +14,11 @@ body {
 	width: 100%;
 }
 
+.div-signout span {
+	display: flex;
+	align-items: center;
+}
+
 .top-bar {
 	position: fixed;
 	display: flex;
