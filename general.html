@@ -103,6 +103,23 @@
                 </div>
             </div>
 
+			<div class="card card-general">
+                <div class="card-header">
+					<h4 data-I18N="info">Info</h4>
+				</div>
+                <div class="card-body div-info">
+					<div class="div-firmware div-info-element input-checkbox">
+						<p data-I18N="firmware-version">Firmware Version:</p>&nbsp;
+						<p id="firmware">100</p>
+					</div>
+					<hr>
+					<div class="div-webserver div-info-element input-checkbox">
+						<p data-I18N="webserver-version">Webserver Version:</p>&nbsp;
+						<p id="webserver">100</p>
+					</div>
+                </div>
+            </div>
+
             <div class="card card-general">
                 <div class="card-header">
 					<h4 data-I18N="factory_reset">Factory Reset</h4>
@@ -115,7 +132,11 @@
             </div>
 			
 			<div class="div-btn-save">
-				<button class="btn btn-primary btn-save" id="btn-save-system" type="submit" data-I18N="save">Save</button>
+				<button class="btn btn-primary btn-save" id="btn-save-system" type="submit" 
+				data-I18N="save" onclick="spinner_by('spinner', 'btn-save-system', 1)">
+					Save
+				</button>
+				<div class="spinner-border text-primary hidden" id="spinner" role="status"></div>
 			</div>
 			
 		</form>
@@ -143,12 +164,13 @@
 		const data = await response.json();
 
 		const fieldMap = {
-			autoupdate: "autoupdate", lang: "lang-choice",
+			autoupdate: "autoupdate", lang: "lang-choice", firmware: "firmware", webserver: "webserver",
 		};
 
 		for (const [key, elementId] of Object.entries(fieldMap)) {
             
 			const element = document.getElementById(elementId);
+			const tagName = element.tagName;
 
             if (key === "autoupdate") {
                 var autoUpdate_value = data[key] === "on"
@@ -161,7 +183,10 @@
                     forceUpdateDiv.classList.remove("hidden");
                 }
             }
-			else if (element) {
+			else if (tagName === "P" || /^H[1-6]$/.test(tagName)){
+				element.textContent = data[key];
+			}
+			else {
 				element.value = data[key];
 			}
 		}

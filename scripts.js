@@ -69,3 +69,17 @@ function loading_screen(){
     var loading_div = document.getElementById("loading");
     loading.classList.remove("hidden");
 }
+
+function spinner_by(spinner_id, element_id, activate){
+    const spinner = document.getElementById(spinner_id);
+    const element = document.getElementById(element_id);
+
+    if (activate){
+        spinner.classList.remove("hidden");
+        element.classList.add("hidden");
+    }
+    else {
+        spinner.classList.add("hidden");
+        element.classList.remove("hidden");
+    }
+}

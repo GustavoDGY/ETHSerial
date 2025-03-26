@@ -79,6 +79,10 @@
     color: #a8aeb4;
 }
 
+.div-info-element {
+    display: flex;
+}
+
 /* < 876px */
 @media(max-width: 876px){
 	

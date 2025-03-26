@@ -44,6 +44,12 @@ body {
 	margin-right: 16px;
 }
 
+.div-login {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 #div-error {
 	margin-bottom: 32px;
 }

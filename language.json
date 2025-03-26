@@ -39,6 +39,9 @@
         "lang": "Linguagem",
         "factory_reset": "Restaurar para Configuração de Fábrica",
         "confirm-warning": "ATENÇÃO: Ao clicar no botão de 'Confirmar' o conversor será restaurado para sua versão de fábrica. Todos seus dados e configurações serão perdidos no processo." ,
+        "info": "Informações",
+        "firmware-version": "Versão do Firmware",
+        "webserver-version": "Versão do Webserver",
 
         "sign_out": "Deslogar",
         "restarting": "Reiniciando...",
@@ -54,7 +57,8 @@
         "invalid_space": "O campo selecionado não pode conter espaçamento entre as palavras",
         "invalid_port": "Ambas as portas precisam estar entre 0 e 65535",
         "same_port": "As portas estão definidas com o mesmo valor",
-        "well_known_port": "Uma das portas está definida como um valor de 'Porta Bem Conhecida' como:</br>80(HTTP), 443(HTTPS), 21(FTP), 22(SSH), 25(SMTP), 53(DNS) ou outra abaixo de 1024</br>Para evitar isso, utilize uma porta com valor de 1024 para cima</br>Se você quiser continuar mesmo assim, apenas salve novamente.</br>Mas tenha cuidado, fazer isso pode gerar problemas inesperados."
+        "well_known_port": "Uma das portas está definida como um valor de 'Porta Bem Conhecida' como:</br>80(HTTP), 443(HTTPS), 21(FTP), 22(SSH), 25(SMTP), 53(DNS) ou outra abaixo de 1024</br>Para evitar isso, utilize uma porta com valor de 1024 para cima</br>Se você quiser continuar mesmo assim, apenas salve novamente.</br>Mas tenha cuidado, fazer isso pode gerar problemas inesperados.",
+        "not_authorized": "O usuário ou senha estão incorretos"
     },
     "en": {
         "system_h": "SYSTEM SETTINGS",
@@ -96,6 +100,9 @@
         "lang": "Language",
         "factory_reset": "Factory Reset",
         "confirm-warning": "ATENTION: Clicking on the 'Confirm' button will factory reset the converter. All your data will be lost in the process.",
+        "info": "Info",
+        "firmware-version": "Firmware Version",
+        "webserver-version": "Webserver Version",
 
         "sign_out": "Sign Out",
         "restarting": "Reloading...",
@@ -111,6 +118,7 @@
         "invalid_space": "The selected field contains in-between spaces that are not allowed",
         "invalid_port": "Both ports must be between 0 and 65535",
         "same_port": "Both ports are the same",
-        "well_known_port": "One of the ports are set as a Well Known Port such as:</br>80(HTTP), 443(HTTPS), 21(FTP), 22(SSH), 25(SMTP), 53(DNS) or other below 1024</br>To avoid this, use port 1024 or above</br>If you wish to proceed anyway just save again</br>But be cautious, doing so may cause unexpected behavior."
+        "well_known_port": "One of the ports are set as a Well Known Port such as:</br>80(HTTP), 443(HTTPS), 21(FTP), 22(SSH), 25(SMTP), 53(DNS) or other below 1024</br>To avoid this, use port 1024 or above</br>If you wish to proceed anyway just save again</br>But be cautious, doing so may cause unexpected behavior.",
+        "not_authorized": "User or password are incorrect"
     }
 }

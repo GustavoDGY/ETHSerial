@@ -17,7 +17,7 @@
 		<div class="form-aux">
 		
 			<div class="alert alert-warning hidden" id="div-error" role="alert">
-				<p class="text-error" id="text-error"></p>
+				<p id="not_authorized" data-I18N="not_authorized" class="hidden"></p>
 			</div>
 		
 			<div class="title-home">
@@ -36,8 +36,12 @@
 							<span class="input-span" data-I18N="password">Password</span>
 							<input class="form-control" type="password" name="password"  data-I18N="password" placeholder="Password">
 						</div>
-						<div class="card-input div-btn-save">
-							<button class="btn btn-primary btn-login" type="submit">Login</button>
+						<div class="div-login">
+							<button class="btn btn-primary btn-login" type="submit" id="btn-login" 
+							onclick="spinner_by('spinner', 'btn-login', 1)">
+								Login
+							</button>
+							<div class="spinner-border text-primary hidden" id="spinner" role="status"></div>
 						</div>
 					</div>
 				</div>
@@ -52,15 +56,16 @@
 <script>
 	let url = new URL(window.location.href);
 	let param = url.searchParams.get("error");
-	
-	var text = document.getElementById("text-error");
+	let param2 = url.searchParams.get("success");
+
+	var error = param !== null;
+	var success = param2 !== null;
+
 	var div = document.getElementById("div-error");
-	if (param == "not_authorized") {
-		text.textContent = "User or password are incorrect";
+	var text = document.getElementById(param);
+	if (error) {
 		div.classList.remove("hidden");
-	}
-	else {
-		div.classList.add("hidden");
+		text.classList.remove("hidden");
 	}
 
 	document.addEventListener("DOMContentLoaded", async ()=>{
