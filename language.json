@@ -1,6 +1,6 @@
 {
     "pt": {
-        "system_h": "<span class=fa fa-desktop></span> CONFIGURAÇÕES DO SISTEMA",
+        "system_h": "CONFIGURAÇÕES DO SISTEMA",
         "system_l": "Configurações do Sistema",
         "auth": "Autenticação",
         "username": "Usuário",
@@ -18,7 +18,7 @@
         "sta_ssid": "SSID da STA",
         "sta_key": "Senha da STA",
         
-        "serial_h": "<span class=fa fa-terminal></span> CONFIGURAÇÕES DE PORTA SERIAL",
+        "serial_h": "CONFIGURAÇÕES DE PORTA SERIAL",
         "serial_l": "Configurações de Porta Serial",
         "basic": "Configurações Básicas",
         "baud": "Baud Rate",
@@ -30,7 +30,7 @@
         "odd": "Ímpar",
         "port": "Porta",
 
-        "general_h": "<span class='fa fa-bars'></span> GERAL",
+        "general_h": "GERAL",
         "general_l": "Geral",
         "options": "Opções",
         "auto_update": "Atualização Automática",
@@ -41,9 +41,9 @@
         "confirm-warning": "ATENÇÃO: Ao clicar no botão de 'Confirmar' o conversor será restaurado para sua versão de fábrica. Todos seus dados e configurações serão perdidos no processo." ,
         "info": "Informações",
         "firmware-version": "Versão do Firmware:",
-        "webserver-version": "Versão do Webserver:",
+        "webserver-version": "Versão do Webserver",
 
-        "sign_out": "<span class=fa fa-sign-out></span> Deslogar",
+        "sign_out": "Deslogar",
         "restarting": "Reiniciando...",
         "success_msg": "Os dados foram salvos com sucesso.</br>O conversor precisa ser reiniciado para que as alterações sejam aplicadas.</br>Você pode clicar <a onclick='loading_screen()' href='/restart'>AQUI</a> para reiniciar agora ou reiniciar manualmente mais tarde.",
         "save": "Salvar",
@@ -61,7 +61,7 @@
         "not_authorized": "O usuário ou senha estão incorretos"
     },
     "en": {
-        "system_h": "<span class=fa fa-desktop></span> SYSTEM SETTINGS",
+        "system_h": "SYSTEM SETTINGS",
         "system_l": "System Settings",
         "auth": "Authentication",
         "username": "Username",
@@ -79,7 +79,7 @@
         "sta_ssid": "STA SSID",
         "sta_key": "STA KEY",
         
-        "serial_h": "<span class=fa fa-terminal></span> SERIAL PORT SETTINGS",
+        "serial_h": "SERIAL PORT SETTINGS",
         "serial_l": "Serial Port Settings",
         "basic": "Basic Settings",
         "baud": "Baud Rate",
@@ -92,7 +92,7 @@
         "port": "Port",
 
         "general_h": "GENERAL",
-        "general_l": "<span class='fa fa-bars'></span> General",
+        "general_l": "General",
         "options": "Options",
         "auto_update": "Auto Update",
         "force_update": "<span><i class='fa fa-cloud-download-alt'></i></span> Force Update",
@@ -104,7 +104,7 @@
         "firmware-version": "Firmware Version:",
         "webserver-version": "Webserver Version:",
 
-        "sign_out": "<span class=fa fa-sign-out></span> Sign Out",
+        "sign_out": "Sign Out",
         "restarting": "Reloading...",
         "success_msg": "The data has been stored successfully.</br>The board needs to restart for the configurations to take place. </br>You can click <a onclick='loading_screen()' href='/restart'>HERE</a> to restart now or restart manually later.",
         "save": "Save",
