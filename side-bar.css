@@ -34,7 +34,7 @@
 }
 
 .list a:hover {
-	color: blue;
+	color: #0d6efd;
 	transition: 0.5s;
 }
 

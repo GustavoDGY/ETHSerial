@@ -63,7 +63,7 @@
 
 	var div = document.getElementById("div-error");
 	var text = document.getElementById(param);
-	if (error) {
+	if (error && param != "invalid") {
 		div.classList.remove("hidden");
 		text.classList.remove("hidden");
 	}

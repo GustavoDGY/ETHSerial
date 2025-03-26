@@ -26,14 +26,15 @@ body {
 	margin-right: 20px;
 }
 
+.top-bar a:hover {
+	color: #0d6efd;
+	transition: 0.5s;
+}
+
 .btn-mobile {
 	border: none;
 	background-color: transparent;
 	margin-left: 5vw;
-}
-
-.div-btn-mobile {
-	width: 100%;
 }
 
 /* < 876px */
