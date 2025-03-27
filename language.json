@@ -41,7 +41,7 @@
         "confirm-warning": "ATENÇÃO: Ao clicar no botão de 'Confirmar' o conversor será restaurado para sua versão de fábrica. Todos seus dados e configurações serão perdidos no processo." ,
         "info": "Informações",
         "firmware-version": "Versão do Firmware:",
-        "webserver-version": "Versão do Webserver",
+        "webserver-version": "Versão do Webserver:",
 
         "sign_out": "Deslogar",
         "restarting": "Reiniciando...",
