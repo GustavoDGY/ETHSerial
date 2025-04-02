@@ -146,6 +146,7 @@
 							<div class="spinner-border text-primary hidden" id="spinner-ssid" role="status"></div>
 						</div>
 						<div class="div-list-ssid hidden" id="div-list-ssid">
+							<span class="input-span" data-I18N="sta_scanned">Scanned</span>
 							<select class="form-control list-ssid" id="list-ssid" onchange="setSSID()"></select>
 						</div>
 					</div>
@@ -230,7 +231,7 @@
     		list_ssid.add(option);
 		});
 
-		div_ssid.classList.add("remove");
+		div_ssid.classList.remove("remove");
 		spinner_by("spinner-ssid", "btn-scan-ssid", 0);
 	}
 

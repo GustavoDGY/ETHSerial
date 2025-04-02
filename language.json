@@ -17,6 +17,7 @@
         "ap_channel": "Canal da AP",
         "sta_ssid": "SSID do Wi-Fi",
         "sta_key": "Senha do Wi-Fi",
+        "sta_scanned": "Redes Escaneadas",
         
         "serial_h": "CONFIGURAÇÕES DE PORTA SERIAL",
         "serial_l": "Configurações de Porta Serial",
@@ -79,6 +80,7 @@
         "ap_channel": "AP Channel",
         "sta_ssid": "STA SSID",
         "sta_key": "STA KEY",
+        "sta_scanned": "Scanned Networks",
         
         "serial_h": "SERIAL PORT SETTINGS",
         "serial_l": "Serial Port Settings",

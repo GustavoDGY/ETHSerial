@@ -28,6 +28,11 @@ body {
 	margin-top: 16px;
 }
 
+#spinner-ssid {
+	margin: 0;
+	margin-left: 16px;
+}
+
 /* < 876px */
 @media(max-width: 876px){
 	
