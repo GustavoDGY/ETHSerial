@@ -73,10 +73,6 @@
 					<p id="dhcp_ip"></p>
 				</div>
 				<div class="card-body">
-					<div class="card-input input-checkbox">
-						<p>DHCP:</p>
-						<input type="checkbox" name="dhcp" id="dhcp">
-					</div>
 					<div id="lan-info">
 						<div class="card-input">
 							<span class="input-span" data-I18N="lan_ip">LAN IP</span>
@@ -94,6 +90,10 @@
 							<span class="input-span" data-I18N="dns">DNS</span>
 							<input class="form-control" type="text" name="dns" id="dns" data-I18N="dns" placeholder="DNS">
 						</div>
+					</div>
+					<div class="card-input input-checkbox">
+						<p>DHCP:</p>
+						<input type="checkbox" name="dhcp" id="dhcp">
 					</div>
 				</div>
 			</div>
@@ -140,11 +140,18 @@
 					</div>
 					<div class="card-input">
 						<span class="input-span" data-I18N="sta_ssid">STA SSID</span>
-						<input class="form-control" type="text" name="stassid" id="stassid" placeholder="STA SSID">
+						<div class="input-ssid">
+							<input class="form-control" type="text" name="stassid" id="stassid" data-I18N="sta_ssid" placeholder="STA SSID">
+							<button class="btn btn-primary btn-scan-ssid" id="btn-scan-ssid" type="button" onclick="scanSSID()" data-I18N="scan">SCAN</button>
+							<div class="spinner-border text-primary hidden" id="spinner_ssid" role="status"></div>
+						</div>
+						<div class="div-list-ssid hidden" id="div-list-ssid">
+							<select class="form-control list-ssid" id="list-ssid" onchange="setSSID()"></select>
+						</div>
 					</div>
 					<div class="card-input">
 						<span class="input-span" data-I18N="sta_key">STA Key</span>
-						<input class="form-control" type="password" name="stakey" id="stakey" placeholder="STA Key">
+						<input class="form-control" type="password" name="stakey" id="stakey" data-I18N="sta_key" placeholder="STA Key">
 					</div>
 				</div>
 			</div>
@@ -174,7 +181,7 @@
 			username: "username", password: "password", dhcp: "dhcp", lan_ip: "lanip",
 			subnet_mask: "netmask", gateway: "gateway", dns: "dns", wifi_mode: "options-wifi-mode",
 			apssid: "apssid", apkey: "apkey", ap_channel: "options-ap-channel",
-			stassid: "stassid", stakey: "stakey", dhcp_ip: "dhcp_ip",
+			stassid: "stassid", stakey: "stakey", dhcp_ip: "dhcp_ip"
 		};
 
 		for (const [key, elementId] of Object.entries(fieldMap)) {
@@ -203,6 +210,35 @@
 				}
 			}
 		}
+	}
+
+	async function scanSSID() {
+
+		spinner_by("spinner-ssid", "btn-scan-ssid", 1);
+
+		var list_ssid = document.getElementById("list-ssid");
+		var div_ssid = document.getElementById("div-list-ssid");
+
+		list_ssid.innerHTML = "";
+		div_ssid.classList.add("hidden");
+
+		const response = await fetch('/get-ssid-list');
+		const data = await response.json();
+
+		data.ssid_list.forEach(ssid => {
+			let option = new Option(ssid, ssid);
+    		list_ssid.add(option);
+		});
+
+		div_ssid.classList.add("remove");
+		spinner_by("spinner-ssid", "btn-scan-ssid", 0);
+	}
+
+	function setSSID() {
+		var ssid_input = document.getElementById("stassid");
+		var list_ssid = document.getElementById("list-ssid");
+
+		ssid_input.value = list_ssid.value;
 	}
 	
 	document.addEventListener("DOMContentLoaded", () => {

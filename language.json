@@ -15,8 +15,8 @@
         "ap_ssid": "SSID da AP",
         "ap_key": "Senha da AP",
         "ap_channel": "Canal da AP",
-        "sta_ssid": "SSID da STA",
-        "sta_key": "Senha da STA",
+        "sta_ssid": "SSID do Wi-Fi",
+        "sta_key": "Senha do Wi-Fi",
         
         "serial_h": "CONFIGURAÇÕES DE PORTA SERIAL",
         "serial_l": "Configurações de Porta Serial",
@@ -48,6 +48,7 @@
         "success_msg": "Os dados foram salvos com sucesso.</br>O conversor precisa ser reiniciado para que as alterações sejam aplicadas.</br>Você pode clicar <a onclick='loading_screen()' href='/restart'>AQUI</a> para reiniciar agora ou reiniciar manualmente mais tarde.",
         "save": "Salvar",
         "confirm": "Confirmar",
+        "scan": "Escanear",
 
         "invalid_auth": "Usuário e senha precisam de 5 ou mais caracteres",
         "invalid_ap": "Os dados da rede AP estão inválidos</br>O SSID precisa ter entre 5 e 32 caracteres</br>A senha precisa de pelo menos 8 caracteres",
@@ -109,6 +110,7 @@
         "success_msg": "The data has been stored successfully.</br>The board needs to restart for the configurations to take place. </br>You can click <a onclick='loading_screen()' href='/restart'>HERE</a> to restart now or restart manually later.",
         "save": "Save",
         "confirm": "Confirm",
+        "scan": "Scan",
 
         "invalid_auth": "User and password must be 5 characters or higher",
         "invalid_ap": "The AP data is invalid</br>The SSID must be between 5 and 32 characters</br>The KEY must have atleast 8 characters",

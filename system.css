@@ -16,6 +16,18 @@ body {
 	margin-bottom: 0;
 }
 
+.input-ssid {
+	display: flex;
+}
+
+.btn-scan-ssid {
+	margin-left: 24px;
+}
+
+.div-list-ssid {
+	margin-top: 16px;
+}
+
 /* < 876px */
 @media(max-width: 876px){
 	
