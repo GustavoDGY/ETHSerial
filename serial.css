@@ -20,6 +20,11 @@ body {
 	border-color: #dee2e6;
 }
 
+.serial-checkbox {
+	margin-top: 0 !important;
+	margin-bottom: 24px !important;
+}
+
 /* < 876px */
 @media(max-width: 876px){
 	

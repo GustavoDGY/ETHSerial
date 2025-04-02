@@ -57,6 +57,10 @@
 			<div class="tab-content tab-content-serial" id="nav-tabContent">
 				<div class="tab-pane fade show active" id="nav-serial1" role="tabpanel" aria-labelledby="serial1-tab">
 					<!-- SERIAL 1 -->
+					<div class="card-input input-checkbox serial-checkbox">
+						<p data-I18N="active_serial">Serial Ativo: </p>
+						<input type="checkbox" name="active-serial1" id="active-serial1">
+					</div>
 					<div class="card card-serial">
 						<div class="card-header">
 							<h4 data-I18N="basic">Basic Settings</h4>
@@ -112,6 +116,10 @@
 				
 				<div class="tab-pane fade" id="nav-serial2" role="tabpanel" aria-labelledby="serial2-tab">
 					<!-- SERIAL 2 -->
+					<div class="card-input input-checkbox serial-checkbox">
+						<p data-I18N="active_serial">Serial Ativo: </p>
+						<input type="checkbox" name="active-serial2" id="active-serial2">
+					</div>
 					<div class="card card-serial">
 						<div class="card-header">
 							<h4 data-I18N="basic">Basic Settings</h4>
@@ -189,16 +197,21 @@
 		const data = await response.json();
 
 		const fieldMap = {
-			"baudrate1": "options-serial1-baudrate", "databit1": "options-serial1-databit",
-			"stopbit1": "options-serial1-stopbit", "parity1": "options-serial1-parity",
-			"baudrate2": "options-serial2-baudrate", "databit2": "options-serial2-databit",
-			"stopbit2": "options-serial2-stopbit", "parity2": "options-serial2-parity",
-			"port1": "port1", "port2": "port2"
+			baudrate1: "options-serial1-baudrate", databit1: "options-serial1-databit",
+			stopbit1: "options-serial1-stopbit", parity1: "options-serial1-parity",
+			baudrate2: "options-serial2-baudrate", databit2: "options-serial2-databit",
+			stopbit2: "options-serial2-stopbit", parity2: "options-serial2-parity",
+			port1: "port1", port2: "port2", 
+			active_serial1: "active-serial1", active_serial2: "active-serial2",
 		};
 
 		for (const [key, elementId] of Object.entries(fieldMap)) {
 			const element = document.getElementById(elementId);
 			if (element) {
+				if (key === "active_serial1" || key === "active_serial2") {
+					var active_value = data[key] === "on";
+					element.checked = active_value;
+				} 
 				element.value = data[key] || "";
 			}
 		}
@@ -232,6 +245,16 @@
 		else {
 			div.classList.add("hidden");
 		}
+
+		var active1 = document.getElementById("active_serial1");
+		active1.addEventListener("change", ()=>{
+			active1.value = active1.checked ? "on" : "";
+		});
+
+		var active2 = document.getElementById("active_serial2");
+		active2.addEventListener("change", ()=>{
+			active2.value = active2.checked ? "on" : "";
+		});
 
 	});
 

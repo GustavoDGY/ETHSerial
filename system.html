@@ -220,7 +220,7 @@
 		var list_ssid = document.getElementById("list-ssid");
 		var div_ssid = document.getElementById("div-list-ssid");
 
-		list_ssid.innerHTML = "";
+		list_ssid.innerHTML = "<option data-I18N='none_selected' selected></option>";
 		div_ssid.classList.add("hidden");
 
 		const response = await fetch('/get-ssid-list');
