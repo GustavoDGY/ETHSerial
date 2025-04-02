@@ -51,7 +51,6 @@
         "save": "Salvar",
         "confirm": "Confirmar",
         "scan": "Escanear",
-        "none_selected": "Nenhum selecionado",
 
         "invalid_auth": "Usuário e senha precisam de 5 ou mais caracteres",
         "invalid_ap": "Os dados da rede AP estão inválidos</br>O SSID precisa ter entre 5 e 32 caracteres</br>A senha precisa de pelo menos 8 caracteres",
@@ -116,7 +115,6 @@
         "save": "Save",
         "confirm": "Confirm",
         "scan": "Scan",
-        "none_selected": "None selected",
 
         "invalid_auth": "User and password must be 5 characters or higher",
         "invalid_ap": "The AP data is invalid</br>The SSID must be between 5 and 32 characters</br>The KEY must have atleast 8 characters",

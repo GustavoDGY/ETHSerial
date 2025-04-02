@@ -31,6 +31,8 @@ body {
 #spinner-ssid {
 	margin: 0;
 	margin-left: 16px;
+	width: 32px;
+	height: 32px;
 }
 
 /* < 876px */
@@ -47,4 +49,19 @@ body {
 		min-width: 25vw;
 	}
 	
+	#spinner-ssid {
+		margin-top: 5px;
+		width: 24px;
+		height: 24px;
+	}
+}
+
+/* < 652px */
+@media(max-width: 652px){
+	
+	#spinner-ssid {
+		margin-top: 10px;
+		width: 16px;
+		height: 16px;
+	}
 }
