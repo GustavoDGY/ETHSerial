@@ -58,6 +58,10 @@
         "sent_bytes": "Bytes Enviados",
         "failed_bytes": "Bytes com Falha",
         "port_configuration": "Configuração da Porta",
+        "enabled": "Habilitado",
+        "disabled": "Desabilitado",
+        "connected": "Conectado",
+        "disconnected": "Desconectado",
 
         "sign_out": "Deslogar",
         "restarting": "Carregando...",
@@ -136,6 +140,10 @@
         "sent_bytes": "Sent Bytes",
         "failed_bytes": "Failed Bytes",
         "port_configuration": "Port Configuration",
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "connected": "Connected",
+        "disconnected": "Disconnected",
 
         "sign_out": "Sign Out",
         "restarting": "Loading...",

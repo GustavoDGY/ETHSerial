@@ -217,7 +217,15 @@
 			const element = document.getElementById(elementId);
 			const tagName = element.tagName;
 
-            if (tagName === "P" || /^H[1-6]$/.test(tagName)){
+            if (key == "dhcp") {
+                var parent = element.parentElement
+                parent.innerHTML = data[key] === "on" ? "<p data-I18N='enabled'></p>" : "<p data-I18N='disabled'></p>";
+            }
+            else if (key == "wifi_status") {
+                var parent = element.parentElement
+                parent.innerHTML = data[key] === "on" ? "<p data-I18N='connected'></p>" : "<p data-I18N='disconnected'></p>";
+            }
+            else if (tagName === "P" || /^H[1-6]$/.test(tagName)){
 				element.textContent = data[key];
 			}
 			else {
