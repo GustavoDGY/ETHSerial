@@ -1,0 +1,20 @@
+.col-status {
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    min-height: 55px;
+    max-height: 55px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.card-status .card-body {
+    padding: 2.5rem;
+}
+
+.card-status {
+    margin-bottom: 24px;
+}
+
+.status-text {
+    margin-left: 14px;
+}

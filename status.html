@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="favicon.png" sizes="any" type="image/x-icon">
+	<link rel="stylesheet" href="status.css">
+	<link rel="stylesheet" href="bootstrap.min.css" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="all.min.css" media="all" onload="this.media='all'">
+	<link rel="stylesheet" href="util.css">
+	<link rel="stylesheet" href="side-bar.css">
+	<link rel="stylesheet" href="top-bar.css">
+	<title>WS2C- Status</title>
+</head>
+
+<header>
+	<div id="top-bar"></div>
+	<div id="side-bar"></div>
+</header>
+
+<body> 
+
+	<div id="loading" class="hidden loading_screen">
+		<h1 data-I18N="restarting">Restarting...</h1>
+	</div>
+
+	<div class="div-main">
+	
+		<div class="alert alert-warning hidden" id="div-error" role="alert">
+		</div>
+		
+		<div class="alert alert-success hidden" id="div-success" role="alert">
+			<p id="success-system" data-I18N="success_msg">
+				The data has been stored successfully. </br>
+				The board needs to restart for the configurations to take place. </br>
+				You can click <a onclick="loading_screen()" href="/restart">HERE</a> 
+				to restart now or restart manually later.
+			</p>
+		</div>
+	
+		<div class="page-title">
+			<h5 data-I18N="status_l"> Status </h5>
+		</div>
+
+        <div class="card card-status">
+            <div class="card-header">
+                <h4 data-I18N="system_status">System Status</h4>
+            </div>
+            <div class="card-body container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="system_name">Product Name</span>
+                            <p class="status-text" id="system-name"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span">MAC</span>
+                            <p class="status-text" id="mac"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span">DHCP</span>
+                            <p class="status-text" id="dhcp"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="lan_ip">LAN IP</span>
+                            <p class="status-text" id="lan_ip"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="subnet_mask">SUBNET MASK</span>
+                            <p class="status-text" id="subnet_mask"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="gateway">Gateway</span>
+                            <p class="status-text" id="gateway"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="dns">DNS</span>
+                            <p class="status-text" id="dns"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="webserver-version">Webserver</span>
+                            <p class="status-text" id="webserver"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="firmware-version">Firmware</span>
+                            <p class="status-text" id="firmware"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="run_time">Total Run Time</span>
+                            <p class="status-text" id="runtime"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="wifi_state">WiFi State</span>
+                            <p class="status-text" id="wifi-state"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="wifi_rssi">RSSI</span>
+                            <p class="status-text" id="wifi-rssi"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-status">
+            <div class="card-header">
+                <h4 data-I18N="serial1_status">Serial1 Status</h4>
+            </div>
+            <div class="card-body container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="received_bytes">Received Bytes</span>
+                            <p class="status-text" id="rb1"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="sent_bytes">Sent Bytes</span>
+                            <p class="status-text" id="sb1"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="failed_bytes">Failed Bytes</span>
+                            <p class="status-text" id="fb1"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="port_configuration">Configuration</span>
+                            <p class="status-text" id="config1"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-status">
+            <div class="card-header">
+                <h4 data-I18N="serial2_status">Serial2 Status</h4>
+            </div>
+            <div class="card-body container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="received_bytes">Received Bytes</span>
+                            <p class="status-text" id="rb2"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="sent_bytes">Sent Bytes</span>
+                            <p class="status-text" id="sb2"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="failed_bytes">Failed Bytes</span>
+                            <p class="status-text" id="fb2"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-status">
+                            <span class="input-span" data-I18N="port_configuration">Configuration</span>
+                            <p class="status-text" id="config2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+	</div>
+	
+
+</body>
+
+<script src="scripts.js"></script>
+<script>
+	async function loadData(error) {
+		const response = await fetch(error ? '/get-data-error' : '/get-data-status');
+		const data = await response.json();
+
+		const fieldMap = {
+			system_name: "system-name", mac: "mac", dhcp: "dhcp", lan_ip: "lan-ip", subnet_mask: "subnet-mask",
+            gateway: "gateway", dns: "dns", firmware: "firmware", webserver: "webserver", runtime: "runtime",
+            wifi_status: "wifi-status", wifi_rssi: "wifi_rssi", serial1_rb: "rb1", serial2_rb: "rb2",
+            serial1_sb: "sb1", serial2_sb: "sb2", serial1_fb: "fb1", serial2_fb: "fb2",
+            serial1_config: "config1", serial2_config: "config2"
+		};
+
+		for (const [key, elementId] of Object.entries(fieldMap)) {
+            
+			const element = document.getElementById(elementId);
+			const tagName = element.tagName;
+
+            if (tagName === "P" || /^H[1-6]$/.test(tagName)){
+				element.textContent = data[key];
+			}
+			else {
+				element.value = data[key];
+			}
+		}
+	}
+	
+	document.addEventListener("DOMContentLoaded", () => {
+
+		let url = new URL(window.location.href);
+		let param = url.searchParams.get("error");
+		let param2 = url.searchParams.get("success");
+		
+		var error = param !== null
+		var success = param2 !== null;
+		
+		var div = document.getElementById("div-error");
+		var text = document.getElementById(param);
+		if (error) {
+			//Sem erro, mas continua aqui para o futuro caso precise
+		}
+
+		loadExternal();
+		loadData(error);	
+		
+		var div = document.getElementById("div-success");
+		if (success) {
+			if (param2 == "true") {
+				div.classList.remove("hidden");
+			}
+		}
+		else {
+			div.classList.add("hidden");
+		}
+	});
+
+
+</script>
+</html>

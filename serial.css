@@ -28,13 +28,6 @@ body {
 /* < 876px */
 @media(max-width: 876px){
 	
-	.div-main {
-		position: relative;
-		margin: 0 !important;
-		top: 50px !important;
-		padding: 5vw 5vh 5vw 5vh !important;
-	}
-
 	.tab-content-serial {
 		padding: 2vh 3vw 2vh 3vw;
 	}
