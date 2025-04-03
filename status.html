@@ -218,12 +218,10 @@
 			const tagName = element.tagName;
 
             if (key == "dhcp") {
-                var parent = element.parentElement
-                parent.innerHTML = data[key] === "on" ? "<p data-I18N='enabled'></p>" : "<p data-I18N='disabled'></p>";
+                element.setAttribute("data-I18N", data[key] === "on" ? "enabled" : "disabled");
             }
             else if (key == "wifi_status") {
-                var parent = element.parentElement
-                parent.innerHTML = data[key] === "on" ? "<p data-I18N='connected'></p>" : "<p data-I18N='disconnected'></p>";
+                element.setAttribute("data-I18N", data[key] === "on" ? "connected" : "disconnected");
             }
             else if (tagName === "P" || /^H[1-6]$/.test(tagName)){
 				element.textContent = data[key];
@@ -249,8 +247,8 @@
 			//Sem erro, mas continua aqui para o futuro caso precise
 		}
 
-		loadExternal();
-		loadData(error);	
+        loadData(error);
+		loadExternal();	
 		
 		var div = document.getElementById("div-success");
 		if (success) {
